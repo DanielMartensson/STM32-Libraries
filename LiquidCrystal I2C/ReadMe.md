@@ -17,14 +17,14 @@ Program example:
   LCD lcd0;
 
   // LCD 20x4
-	LiquidCrystal_I2C(&lcd0, &hi2c1, ADDRESS, COLS, ROWS);
-	init(&lcd0);
-	clear(&lcd0);
-	home(&lcd0);
-	char* str = "Hej August!";
-	printToLCD(&lcd0, str, 11);
-	blink_on(&lcd0);
-	setCursor(&lcd0, 8, 2);
-	char* str2 = "Hej ITH!";
-	printToLCD(&lcd0, str2, 8);
+  LiquidCrystal_I2C(&lcd0, &hi2c1, ADDRESS, COLS, ROWS);
+  init(&lcd0);
+  clear(&lcd0);
+  home(&lcd0);
+  char* str = "Hej August!";
+  printToLCD(&lcd0, str, 11);
+  blink_on(&lcd0);
+  setCursor(&lcd0, 8, 2);
+  char* str2 = "Hej ITH!";
+  printToLCD(&lcd0, str2, 8);
 ```
