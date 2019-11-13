@@ -15,8 +15,9 @@ Program example:
   #define COLS 20
   #define ROWS 4
   
-  // Struct
+  // Structs
   LCD lcd0;
+  I2C_HandleTypeDef hi2c1;
 
   // LCD 20x4
   LiquidCrystal_I2C(&lcd0, &hi2c1, ADDRESS, COLS, ROWS);
