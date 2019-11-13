@@ -1,7 +1,9 @@
 # Liquid Crystal with I2C 
 
 This library is made for the PCF8574/PCF8574A expander IC with I2C connection. With this library, you can write to liquid crystals
-displays such as 16x2 LCD or 20x4 LCD. 
+displays such as 16x2 LCD or 20x4 LCD. Notice that this example is using GPIOA PIN5 as a check-led if the I2C connected the expander IC. Change function init_priv(LCD* lcd) in LiquidCrystal_I2C.c if you want to change that pin.
+
+This library has been tested with Nucleo-F446RE.
 
 Program example:
 ```
