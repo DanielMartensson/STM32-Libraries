@@ -15,4 +15,4 @@ Hint: If you don't know, the C function sprintf can be used to turn a float valu
 ## MAX31865 RTD Temperature sensor reader
 Rewritten Arduino C++ library from ![olewolf](https://github.com/olewolf/arduino-max31865) to STM32 C library. Added some more features as well.
 
-![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/MAX31865/Selecci%C3%B3n_021.pngg)
+![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/MAX31865/Selecci%C3%B3n_021.png)
