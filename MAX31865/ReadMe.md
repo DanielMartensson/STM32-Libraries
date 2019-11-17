@@ -29,7 +29,7 @@ Program example:
   configure(&spi0, TRUE, TRUE, FALSE, FALSE, MAX31865_FAULT_DETECTION_NONE, TRUE, TRUE);
 
   // Status code
-  uint8_t status =  read_all(&spi0);
+  uint8_t status =  read_all(&spi0); // Need ALWAYS be called first!
   
   // Temperature
   float temp =  temperature(&spi0);
