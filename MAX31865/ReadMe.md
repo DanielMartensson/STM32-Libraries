@@ -15,18 +15,18 @@ Program example:
   SPI_HandleTypeDef hspi2
 
   // MAX31865 
-  /*     Configure:
-	       V_BIAS enabled
-	       Auto-conversion
-	       1-shot disabled
-	       3-wire disabled (4 or 2 wire enabled
-	       Fault detection:  automatic delay
-	       Fault status:  auto-clear
-	       50 Hz filter enabled (not 60 Hz)
-	  */
+  /* Configure:
+     V_BIAS enabled - TRUE
+     Auto-conversion - TRUE
+     1-shot disabled - FALSE
+     3-wire disabled (4 or 2 wire enabled) - FALSE
+     Fault detection:  automatic delay - MAX31865_FAULT_DETECTION_NONE
+     Fault status:  auto-clear - TRUE
+     50 Hz filter enabled (not 60 Hz) - TRUE
+  */
 
-	MAX31865(&spi0, RTD_PT100, GPIO_PIN_12, GPIOB, &hspi2);
-	configure(&spi0, TRUE, TRUE, FALSE, FALSE, MAX31865_FAULT_DETECTION_NONE, TRUE, TRUE);
+  MAX31865(&spi0, RTD_PT100, GPIO_PIN_12, GPIOB, &hspi2);
+  configure(&spi0, TRUE, TRUE, FALSE, FALSE, MAX31865_FAULT_DETECTION_NONE, TRUE, TRUE);
 
   // Status code
   uint8_t status =  read_all(&spi0);
