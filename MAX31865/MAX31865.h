@@ -47,7 +47,10 @@
 #define RTD_B_ITS90         -5.870e-7
 #define RTD_B_USINDUSTRIAL  -5.8495e-7
 #define RTD_B_DIN43760      -5.8019e-7
-/* RTD coefficient C is required only for temperatures
+
+/* USER CONFIGURATION:
+ *
+ * RTD coefficient C is required only for temperatures
  below 0 deg. C.  The selected RTD coefficient set
  is specified below. */
 #define SELECT_RTD_HELPER(x) x
@@ -56,13 +59,16 @@
 #define RTD_B         SELECT_RTD(RTD_B_DIN43760)
 
 /*
+ * USER CALIBRATION:
  * The reference resistor on the hardware; see the MAX31865 datasheet
  * for details.  The values 400 and 4000 Ohm are recommended values for
  * the PT100 and PT1000. For Adafruit MAX31865: RTD100 = 430 Ohm, RTD1000 = 4300 ohm
  * Or you can set a 220 Ohm resistor and change the RTD_PREF until the raw_resicance is the same
  */
 #define RTD_RREF_PT100         218 /* Ohm - This need to be calibrated by you */
-#define RTD_RREF_PT1000       4300 /* Ohm */
+#define RTD_RREF_PT1000       4300 /* Ohm - Same as here as well*/
+
+
 /*
  * The RTD resistance at 0 degrees Celcius.  For the PT100, this is 100 Ohm;
  * for the PT1000, it is 1000 Ohm.
