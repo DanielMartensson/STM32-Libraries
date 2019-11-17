@@ -55,8 +55,8 @@
  is specified below. */
 #define SELECT_RTD_HELPER(x) x
 #define SELECT_RTD(x) SELECT_RTD_HELPER(x)
-#define RTD_A         SELECT_RTD(RTD_A_DIN43760)
-#define RTD_B         SELECT_RTD(RTD_B_DIN43760)
+#define RTD_A         SELECT_RTD(RTD_A_ITS90)
+#define RTD_B         SELECT_RTD(RTD_B_ITS90)
 
 /*
  * USER CALIBRATION:
