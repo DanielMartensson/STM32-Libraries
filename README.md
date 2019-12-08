@@ -8,6 +8,6 @@ Rewritten Arduino C++ library from ![johnrickman](https://github.com/johnrickman
 ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/LiquidCrystal%20I2C/Selecci%C3%B3n_018.png)
 
 ## MAX31865 RTD Temperature sensor reader
-Rewritten Arduino C++ library from ![olewolf](https://github.com/olewolf/arduino-max31865) to STM32 C library. Added some more features as well.
+Rewritten STM32 C library from ![4ilo](https://github.com/4ilo/MAX31865-Stm32HAL) so it will fit multiple PT100 sensors at the MAX31865 IC.
 
 ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/MAX31865/Selecci%C3%B3n_021.png)
