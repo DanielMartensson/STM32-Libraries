@@ -1,7 +1,6 @@
 # MAX31865 RTD Temperature reader
 
-This library is made for the MAX31865 ADC with Software SPI connection. When this library, you can connect a 2/3/4 wire RTD temperature sensor
-and read its temperature. The first thing you need to do is change the user configuration and user calibration values in MAX31865.h file.
+This library is made for the MAX31865 ADC with Software SPI connection. When this library, you can connect a 2/3/4 wire RTD temperature sensor and read its temperature. 
 
 This library has been tested with Nucleo-F446RE.
 
