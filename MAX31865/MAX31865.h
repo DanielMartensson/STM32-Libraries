@@ -32,6 +32,9 @@
 /********************* General defines *********************/
 #define MAX31865_ON 1
 #define MAX31865_OFF 0
+#define WIRE4 4
+#define WIRE3 3
+#define WIRE2 2
 
 /********************* MAX31865_GPIO pinout struct *********************/
 typedef struct {
