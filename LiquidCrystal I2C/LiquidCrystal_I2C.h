@@ -66,47 +66,45 @@ typedef struct {
 	uint8_t _backlightval;
 	uint8_t _charsize;  // E.g charsize = LCD_5x8DOTS
 	I2C_HandleTypeDef* hi2c;
-} LCD;
+} LiquidCrystal_LCD;
 
-void LiquidCrystal_I2C(LCD* lcd, I2C_HandleTypeDef* hi2c, uint8_t lcd_Addr, uint8_t lcd_cols, uint8_t lcd_rows);
-void clear(LCD* lcd);
-void home(LCD* lcd);
-void noDisplay(LCD* lcd);
-void display(LCD* lcd);
-void noBlink(LCD* lcd);
-void blink(LCD* lcd);
-void noCursor(LCD* lcd);
-void cursor(LCD* lcd);
-void scrollDisplayLeft(LCD* lcd);
-void scrollDisplayRight(LCD* lcd);
-void printLeft(LCD* lcd);
-void printRight(LCD* lcd);
-void leftToRight(LCD* lcd);
-void rightToLeft(LCD* lcd);
-void shiftIncrement(LCD* lcd);
-void shiftDecrement(LCD* lcd);
-void noBacklight(LCD* lcd);
-void backlight(LCD* lcd);
-void autoscroll(LCD* lcd);
-void noAutoscroll(LCD* lcd);
-void createChar(LCD* lcd, uint8_t location, uint8_t charmap[]); // Example: uint8_t charmap[8] = {0b00100,0b01110,0b01110,0b01110,0b11111,0b00000,0b00100,0b00000};
-void setCursor(LCD* lcd, uint8_t, uint8_t);
-void write(LCD* lcd, uint8_t);
-void command(LCD* lcd, uint8_t);
-void init(LCD* lcd);
-void oled_init(LCD* lcd);
-void printToLCD(LCD* lcd, char* string, uint8_t length);
+void LiquidCrystal_I2C(LiquidCrystal_LCD* lcd, I2C_HandleTypeDef* hi2c, uint8_t lcd_Addr, uint8_t lcd_cols, uint8_t lcd_rows);
+void clear(LiquidCrystal_LCD* lcd);
+void home(LiquidCrystal_LCD* lcd);
+void noDisplay(LiquidCrystal_LCD* lcd);
+void display(LiquidCrystal_LCD* lcd);
+void noBlink(LiquidCrystal_LCD* lcd);
+void blink(LiquidCrystal_LCD* lcd);
+void noCursor(LiquidCrystal_LCD* lcd);
+void cursor(LiquidCrystal_LCD* lcd);
+void scrollDisplayLeft(LiquidCrystal_LCD* lcd);
+void scrollDisplayRight(LiquidCrystal_LCD* lcd);
+void printLeft(LiquidCrystal_LCD* lcd);
+void printRight(LiquidCrystal_LCD* lcd);
+void leftToRight(LiquidCrystal_LCD* lcd);
+void rightToLeft(LiquidCrystal_LCD* lcd);
+void shiftIncrement(LiquidCrystal_LCD* lcd);
+void shiftDecrement(LiquidCrystal_LCD* lcd);
+void noBacklight(LiquidCrystal_LCD* lcd);
+void backlight(LiquidCrystal_LCD* lcd);
+void autoscroll(LiquidCrystal_LCD* lcd);
+void noAutoscroll(LiquidCrystal_LCD* lcd);
+void createChar(LiquidCrystal_LCD* lcd, uint8_t location, uint8_t charmap[]); // Example: uint8_t charmap[8] = {0b00100,0b01110,0b01110,0b01110,0b11111,0b00000,0b00100,0b00000};
+void setCursor(LiquidCrystal_LCD* lcd, uint8_t, uint8_t);
+void write(LiquidCrystal_LCD* lcd, uint8_t);
+void command(LiquidCrystal_LCD* lcd, uint8_t);
+void init(LiquidCrystal_LCD* lcd);
+void oled_init(LiquidCrystal_LCD* lcd);
+void printToLCD(LiquidCrystal_LCD* lcd, char* string, uint8_t length);
 
 /*
  * compatibility API function aliases
  */
-void blink_on(LCD* lcd);												// alias for blink()
-void blink_off(LCD* lcd);       										// alias for noBlink()
-void cursor_on(LCD* lcd);      	 										// alias for cursor()
-void cursor_off(LCD* lcd);      										// alias for noCursor()
-void setBacklight(LCD* lcd, uint8_t ON);								// alias for backlight() and nobacklight()
-void load_custom_character(LCD* lcd, uint8_t char_num, uint8_t *rows);  // alias for createChar()
-
-
+void blink_on(LiquidCrystal_LCD* lcd);												// alias for blink()
+void blink_off(LiquidCrystal_LCD* lcd);       										// alias for noBlink()
+void cursor_on(LiquidCrystal_LCD* lcd);      	 										// alias for cursor()
+void cursor_off(LiquidCrystal_LCD* lcd);      										// alias for noCursor()
+void setBacklight(LiquidCrystal_LCD* lcd, uint8_t ON);								// alias for backlight() and nobacklight()
+void load_custom_character(LiquidCrystal_LCD* lcd, uint8_t char_num, uint8_t *rows);  // alias for createChar()
 
 #endif
