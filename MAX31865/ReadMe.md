@@ -14,6 +14,14 @@ Program example:
   MAX31865_SPI spi1;
   MAX31865_SPI spi2;
   
+  /*
+	 * SPI settings:
+	 * CPHA = 2 Edge
+	 * Prescaler = 256
+	 * First bit = MBS first
+	 * CPOL = High
+	 */
+  
   // Select WIRE4 for 4 wire PT100 or WIRE3 for 3 wire PT100 or WIRE2 for 2 wire PT100
   // You can use this for PT1000 as well, just change the reference value in MAX31865.h file
   
