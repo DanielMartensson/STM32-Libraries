@@ -14,6 +14,9 @@ Program example:
   MAX31865_SPI spi1;
   MAX31865_SPI spi2;
   
+  // Select WIRE4 for 4 wire PT100 or WIRE3 for 3 wire PT100 or WIRE2 for 2 wire PT100
+  // You can use this for PT1000 as well, just change the reference value in MAX31865.h file
+  
   // Temperature sensors
   MAX31865_init(&spi0, GPIOB, GPIO_PIN_14, &hspi2, WIRE4); // 14 = CE0
   MAX31865_init(&spi1, GPIOB, GPIO_PIN_15, &hspi2, WIRE4); // 15 = CE1
