@@ -10,17 +10,17 @@ Program example:
   #include "MAX31865/MAX31865.h"
   
   // Structs
-  MAX31865_Soft_SPI spi0;
-  MAX31865_Soft_SPI spi1;
-  MAX31865_Soft_SPI spi2;
+  MMAX31865_SPI spi0;
+  MAX31865_SPI spi1;
+  MAX31865_SPI spi2;
   
-  // Constructor
-  MAX31865_init(&spi0, GPIOB, GPIO_PIN_14, GPIOB, GPIO_PIN_13, GPIOC, GPIO_PIN_1, GPIOC, GPIO_PIN_2, WIRE4);
-  MAX31865_init(&spi1, GPIOB, GPIO_PIN_15, GPIOB, GPIO_PIN_13, GPIOC, GPIO_PIN_1, GPIOC, GPIO_PIN_2, WIRE4);
-  MAX31865_init(&spi2, GPIOB, GPIO_PIN_12, GPIOB, GPIO_PIN_13, GPIOC, GPIO_PIN_1, GPIOC, GPIO_PIN_2, WIRE4);
+  // Temperature sensors
+  MAX31865_init(&spi0, GPIOB, GPIO_PIN_14, &hspi2, WIRE4); // 14 = CE2
+  MAX31865_init(&spi1, GPIOB, GPIO_PIN_15, &hspi2, WIRE4); // 15 = CE2
+  MAX31865_init(&spi2, GPIOB, GPIO_PIN_12, &hspi2, WIRE4); // 12 = CE2
   
   // Print temperature
-  float temperature0 = MAX31865_readTemp(&spi0);
-  float temperature1 = MAX31865_readTemp(&spi1);
-  float temperature2 = MAX31865_readTemp(&spi2);
+  float temperature0 = MAX31865_temperature(&spi0);
+  float temperature1 = MAX31865_temperature(&spi1);
+  float temperature2 = MAX31865_temperature(&spi2);
 ```
