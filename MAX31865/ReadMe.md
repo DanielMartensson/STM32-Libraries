@@ -15,8 +15,8 @@ Program example:
   MAX31865_SPI spi2;
   
   // Temperature sensors
-  MAX31865_init(&spi0, GPIOB, GPIO_PIN_14, &hspi2, WIRE4); // 14 = CE2
-  MAX31865_init(&spi1, GPIOB, GPIO_PIN_15, &hspi2, WIRE4); // 15 = CE2
+  MAX31865_init(&spi0, GPIOB, GPIO_PIN_14, &hspi2, WIRE4); // 14 = CE0
+  MAX31865_init(&spi1, GPIOB, GPIO_PIN_15, &hspi2, WIRE4); // 15 = CE1
   MAX31865_init(&spi2, GPIOB, GPIO_PIN_12, &hspi2, WIRE4); // 12 = CE2
   
   // Print temperature
