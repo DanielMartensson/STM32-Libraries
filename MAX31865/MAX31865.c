@@ -53,6 +53,21 @@ float MAX31865_temperature(MAX31865_SPI* spi) {
 }
 
 /*
+ * Get the raw resistance
+ */
+uint16_t MAX31865_raw_resistance(MAX31865_SPI* spi){
+	uint8_t buffer[2];
+	uint8_t address = 0x01; // MAX31865_RTD_MSB
+	MAX31865_read(spi, &address, buffer, 2);
+
+	// Combine 2 bytes into 1 number, and shift 1 down to remove fault bit
+	uint16_t data = buffer[0] << 8;
+	data |= buffer[1];
+	data >>= 1;
+	return data;
+}
+
+/*
  * Get the configuration
  */
 uint8_t MAX31865_configuration(MAX31865_SPI* spi){
