@@ -15,7 +15,7 @@ Program example:
   SPI_HandleTypeDef hspi2;
   ILI9341_SPI spi;
 
-// Initialize the spi object
+  // Initialize the spi object
   ILI9341_Init(&spi, &hspi2, LCD_CS_GPIO_Port, LCD_CS_Pin, LCD_DC_GPIO_Port, LCD_DC_Pin, LCD_RST_GPIO_Port, LCD_RST_Pin, TS_CS_GPIO_Port, TS_CS_Pin);
 
   // Use the LCD
