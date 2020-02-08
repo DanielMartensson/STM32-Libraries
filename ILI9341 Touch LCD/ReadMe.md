@@ -34,11 +34,13 @@ Program example:
 	if (spi.myTsData.isPressed == 1) {
 		// Draw a point
 		ILI9341_fillCircle(&spi, spi.myTsData.X, spi.myTsData.Y, 1, COLOR_RED);
-
+		
+		// Display coordinates
 		char text[20];
 		sprintf(text, "x=%d, y=%d", spi.myTsData.X, spi.myTsData.Y);
 		ILI9341_printText(&spi, text, 10, 10, COLOR_GREEN, 1, 2);
-
+		
+		// First clean the creen with COLOR_NAVY. Then create a rectangle if we are in a specific area. 
 		if (spi.myTsData.X >= 40 && spi.myTsData.X <= 240 && spi.myTsData.Y >= 0 && spi.myTsData.Y <= 50) {
 			ILI9341_Fill(&spi, COLOR_NAVY);
 			ILI9341_Fill_Rect(&spi, 40, 0, 200, 50, COLOR_BLUE);
