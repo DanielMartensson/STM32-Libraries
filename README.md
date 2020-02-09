@@ -20,4 +20,4 @@ Rewritten STM32 C library from ![MYaqoobEmbedded](https://github.com/MYaqoobEmbe
 ## ADS1015 and ADS1115
 Rewritten Arduino C++ library from ![Adafruit](https://github.com/adafruit/Adafruit_ADS1X15) to STM32 C library. This library shares exactly the same functions as the Adafruit's library. This ADC is very powerfull and have 4 channels for measurement. The resolution is 16-bit which is gives a very accurate measurement. 
 
-![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/ADS1015_ADS1115/Adafruit-1085-30091131-01.jpg | width=500)
+![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/ADS1015_ADS1115/Adafruit-1085-30091131-01.jpg =250x250)
