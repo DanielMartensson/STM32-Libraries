@@ -10,20 +10,20 @@
 // Write the register
 static void writeRegister(ADS1xx5_I2C *i2c, uint8_t reg, uint16_t value) {
 	uint8_t pData[3] = { reg, (uint8_t) (value >> 8), (uint8_t) (value & 0xFF) };
-	HAL_I2C_Master_Transmit(i2c->hi2c, i2c->m_i2cAddress << 1, pData, 3, 10);
+	HAL_I2C_Master_Transmit(i2c->hi2c, i2c->m_i2cAddress, pData, 3, 10);
 }
 
 // Read the register
 static uint16_t readRegister(ADS1xx5_I2C *i2c, uint8_t reg) {
-	HAL_I2C_Master_Transmit(i2c->hi2c, i2c->m_i2cAddress << 1, &reg, 1, 10);
+	HAL_I2C_Master_Transmit(i2c->hi2c, i2c->m_i2cAddress, &reg, 1, 10);
 	uint8_t pData[2] = { 0, 0 };
-	HAL_I2C_Master_Receive(i2c->hi2c, i2c->m_i2cAddress << 1, pData, 2, 10);
+	HAL_I2C_Master_Receive(i2c->hi2c, i2c->m_i2cAddress, pData, 2, 10);
 	return ((pData[0] << 8) | pData[1]);
 }
 
-// Check if we have correct connection. It's Important to shift the address << 1
+// Check if we have correct connection.
 static void ADSbegin(ADS1xx5_I2C *i2c) {
-	if (HAL_I2C_IsDeviceReady(i2c->hi2c, i2c->m_i2cAddress << 1, 10, 10) != HAL_OK)
+	if (HAL_I2C_IsDeviceReady(i2c->hi2c, i2c->m_i2cAddress, 10, 10) != HAL_OK)
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET); // This MUST have GPIO PA5 ready to use - ERROR I2C - Wrong address
 
 }
@@ -31,7 +31,7 @@ static void ADSbegin(ADS1xx5_I2C *i2c) {
 // Declare an ADS1015 structure
 void ADS1015(ADS1xx5_I2C *i2c, I2C_HandleTypeDef *hi2c, uint8_t i2cAddress) {
 	i2c->hi2c = hi2c;
-	i2c->m_i2cAddress = i2cAddress;
+	i2c->m_i2cAddress = i2cAddress << 1; //  It's Important to shift the address << 1
 	i2c->m_conversionDelay = ADS1015_CONVERSIONDELAY;
 	i2c->m_bitShift = 4;
 	i2c->m_gain = GAIN_TWOTHIRDS; /* +/- 6.144V range (limited to VDD +0.3V max!) */
@@ -41,7 +41,7 @@ void ADS1015(ADS1xx5_I2C *i2c, I2C_HandleTypeDef *hi2c, uint8_t i2cAddress) {
 // Declare an ADS1115 structure
 void ADS1115(ADS1xx5_I2C *i2c, I2C_HandleTypeDef *hi2c, uint8_t i2cAddress) {
 	i2c->hi2c = hi2c;
-	i2c->m_i2cAddress = i2cAddress;
+	i2c->m_i2cAddress = i2cAddress << 1; //  It's Important to shift the address << 1
 	i2c->m_conversionDelay = ADS1115_CONVERSIONDELAY;
 	i2c->m_bitShift = 0;
 	i2c->m_gain = GAIN_TWOTHIRDS; /* +/- 6.144V range (limited to VDD +0.3V max!) */
@@ -79,7 +79,7 @@ uint16_t ADSreadADC_SingleEnded(ADS1xx5_I2C *i2c, uint8_t channel) {
 
 	// Start with default values
 	uint16_t config =
-	ADS1015_REG_CONFIG_CQUE_NONE 			|   	// Disable the comparator (default val)
+	ADS1015_REG_CONFIG_CQUE_NONE 			|   // Disable the comparator (default val)
 			ADS1015_REG_CONFIG_CLAT_NONLAT 	|  	// Non-latching (default val)
 			ADS1015_REG_CONFIG_CPOL_ACTVLOW | 	// Alert/Rdy active low   (default val)
 			ADS1015_REG_CONFIG_CMODE_TRAD 	| 	// Traditional comparator (default val)
@@ -127,7 +127,7 @@ uint16_t ADSreadADC_SingleEnded(ADS1xx5_I2C *i2c, uint8_t channel) {
 int16_t ADSreadADC_Differential_0_1(ADS1xx5_I2C *i2c) {
 	// Start with default values
 	uint16_t config =
-	ADS1015_REG_CONFIG_CQUE_NONE 	|   	// Disable the comparator (default val)
+	ADS1015_REG_CONFIG_CQUE_NONE 	|   // Disable the comparator (default val)
 	ADS1015_REG_CONFIG_CLAT_NONLAT 	|  	// Non-latching (default val)
 	ADS1015_REG_CONFIG_CPOL_ACTVLOW | 	// Alert/Rdy active low   (default val)
 	ADS1015_REG_CONFIG_CMODE_TRAD 	| 	// Traditional comparator (default val)
@@ -172,7 +172,7 @@ int16_t ADSreadADC_Differential_0_1(ADS1xx5_I2C *i2c) {
 int16_t ADSreadADC_Differential_2_3(ADS1xx5_I2C *i2c) {
 	// Start with default values
 	uint16_t config =
-	ADS1015_REG_CONFIG_CQUE_NONE 	|   	// Disable the comparator (default val)
+	ADS1015_REG_CONFIG_CQUE_NONE 	|   // Disable the comparator (default val)
 	ADS1015_REG_CONFIG_CLAT_NONLAT 	|  	// Non-latching (default val)
 	ADS1015_REG_CONFIG_CPOL_ACTVLOW | 	// Alert/Rdy active low   (default val)
 	ADS1015_REG_CONFIG_CMODE_TRAD 	| 	// Traditional comparator (default val)
@@ -220,11 +220,11 @@ void ADSstartComparator_SingleEnded(ADS1xx5_I2C *i2c, uint8_t channel, int16_t t
 	uint16_t config =
 	ADS1015_REG_CONFIG_CQUE_1CONV 	|   	// Comparator enabled and asserts on 1 match
 	ADS1015_REG_CONFIG_CLAT_LATCH 	|   	// Latching mode
-	ADS1015_REG_CONFIG_CPOL_ACTVLOW | 	// Alert/Rdy active low   (default val)
-	ADS1015_REG_CONFIG_CMODE_TRAD 	| 	// Traditional comparator (default val)
-	ADS1015_REG_CONFIG_DR_1600SPS 	|	// 1600 samples per second (default)
-	ADS1015_REG_CONFIG_MODE_CONTIN 	|  	// Continuous conversion mode
-	ADS1015_REG_CONFIG_MODE_CONTIN;   	// Continuous conversion mode
+	ADS1015_REG_CONFIG_CPOL_ACTVLOW | 		// Alert/Rdy active low   (default val)
+	ADS1015_REG_CONFIG_CMODE_TRAD 	| 		// Traditional comparator (default val)
+	ADS1015_REG_CONFIG_DR_1600SPS 	|	 	// 1600 samples per second (default)
+	ADS1015_REG_CONFIG_MODE_CONTIN 	|  		// Continuous conversion mode
+	ADS1015_REG_CONFIG_MODE_CONTIN;   		// Continuous conversion mode
 
 	// Set PGA/voltage range
 	config |= i2c->m_gain;
