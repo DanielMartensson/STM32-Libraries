@@ -23,8 +23,7 @@ static uint16_t readRegister(ADS1xx5_I2C *i2c, uint8_t reg) {
 
 // Check if we have correct connection. It's Important to shift the address << 1
 static void ADSbegin(ADS1xx5_I2C *i2c) {
-	if (HAL_I2C_IsDeviceReady(i2c->hi2c, i2c->m_i2cAddress << 1, 10, 10)
-			!= HAL_OK)
+	if (HAL_I2C_IsDeviceReady(i2c->hi2c, i2c->m_i2cAddress << 1, 10, 10) != HAL_OK)
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET); // This MUST have GPIO PA5 ready to use - ERROR I2C - Wrong address
 
 }
@@ -80,7 +79,7 @@ uint16_t ADSreadADC_SingleEnded(ADS1xx5_I2C *i2c, uint8_t channel) {
 
 	// Start with default values
 	uint16_t config =
-	ADS1015_REG_CONFIG_CQUE_NONE 			|   // Disable the comparator (default val)
+	ADS1015_REG_CONFIG_CQUE_NONE 			|   	// Disable the comparator (default val)
 			ADS1015_REG_CONFIG_CLAT_NONLAT 	|  	// Non-latching (default val)
 			ADS1015_REG_CONFIG_CPOL_ACTVLOW | 	// Alert/Rdy active low   (default val)
 			ADS1015_REG_CONFIG_CMODE_TRAD 	| 	// Traditional comparator (default val)
@@ -128,7 +127,7 @@ uint16_t ADSreadADC_SingleEnded(ADS1xx5_I2C *i2c, uint8_t channel) {
 int16_t ADSreadADC_Differential_0_1(ADS1xx5_I2C *i2c) {
 	// Start with default values
 	uint16_t config =
-	ADS1015_REG_CONFIG_CQUE_NONE 	|   // Disable the comparator (default val)
+	ADS1015_REG_CONFIG_CQUE_NONE 	|   	// Disable the comparator (default val)
 	ADS1015_REG_CONFIG_CLAT_NONLAT 	|  	// Non-latching (default val)
 	ADS1015_REG_CONFIG_CPOL_ACTVLOW | 	// Alert/Rdy active low   (default val)
 	ADS1015_REG_CONFIG_CMODE_TRAD 	| 	// Traditional comparator (default val)
@@ -173,7 +172,7 @@ int16_t ADSreadADC_Differential_0_1(ADS1xx5_I2C *i2c) {
 int16_t ADSreadADC_Differential_2_3(ADS1xx5_I2C *i2c) {
 	// Start with default values
 	uint16_t config =
-	ADS1015_REG_CONFIG_CQUE_NONE 	|   // Disable the comparator (default val)
+	ADS1015_REG_CONFIG_CQUE_NONE 	|   	// Disable the comparator (default val)
 	ADS1015_REG_CONFIG_CLAT_NONLAT 	|  	// Non-latching (default val)
 	ADS1015_REG_CONFIG_CPOL_ACTVLOW | 	// Alert/Rdy active low   (default val)
 	ADS1015_REG_CONFIG_CMODE_TRAD 	| 	// Traditional comparator (default val)
@@ -221,11 +220,11 @@ void ADSstartComparator_SingleEnded(ADS1xx5_I2C *i2c, uint8_t channel, int16_t t
 	uint16_t config =
 	ADS1015_REG_CONFIG_CQUE_1CONV 	|   	// Comparator enabled and asserts on 1 match
 	ADS1015_REG_CONFIG_CLAT_LATCH 	|   	// Latching mode
-	ADS1015_REG_CONFIG_CPOL_ACTVLOW | 		// Alert/Rdy active low   (default val)
-	ADS1015_REG_CONFIG_CMODE_TRAD 	| 		// Traditional comparator (default val)
-	ADS1015_REG_CONFIG_DR_1600SPS 	|	 	// 1600 samples per second (default)
-	ADS1015_REG_CONFIG_MODE_CONTIN 	|  		// Continuous conversion mode
-	ADS1015_REG_CONFIG_MODE_CONTIN;   		// Continuous conversion mode
+	ADS1015_REG_CONFIG_CPOL_ACTVLOW | 	// Alert/Rdy active low   (default val)
+	ADS1015_REG_CONFIG_CMODE_TRAD 	| 	// Traditional comparator (default val)
+	ADS1015_REG_CONFIG_DR_1600SPS 	|	// 1600 samples per second (default)
+	ADS1015_REG_CONFIG_MODE_CONTIN 	|  	// Continuous conversion mode
+	ADS1015_REG_CONFIG_MODE_CONTIN;   	// Continuous conversion mode
 
 	// Set PGA/voltage range
 	config |= i2c->m_gain;
