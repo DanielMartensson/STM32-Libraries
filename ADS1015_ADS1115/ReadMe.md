@@ -14,7 +14,8 @@ Program example:
   I2C_HandleTypeDef hi2c1;
   ADS1xx5_I2C i2c;
 
-  // Declare the structure where we using GND as address. Look at the top of the header file for addresses.
+  // Declare the structure where we using GND as address. 
+  // Look at the top of the header file for addresses.
   ADS1115(&i2c, &hi2c1, ADS_ADDR_GND); // Or ADS1015(&i2c, &hi2c1, ADS_ADDR_GND);
   ADSsetGain(&i2c, GAIN_EIGHT);
 
