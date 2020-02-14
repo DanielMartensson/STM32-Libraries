@@ -18,10 +18,7 @@ This ADC does not fit measurements. Please use another ADC with higher bit resol
    * CPOL = Low
    */
   
-  // Select WIRE4 for 4 wire PT100 or WIRE3 for 3 wire PT100 or WIRE2 for 2 wire PT100
-  // You can use this for PT1000 as well, just change the reference value in MAX31865.h file
-  
-  // Temperature sensors
+  // Init the 10-Bit ADC
   MCP3008_init(&spi0, &hspi2, GPIOB, GPIO_PIN_14);
   
   // Read ADC's
