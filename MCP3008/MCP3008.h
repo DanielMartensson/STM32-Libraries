@@ -17,6 +17,6 @@ typedef struct {
 }MCP3008_SPI;
 
 void MCP3008_Init(MCP3008_SPI* spi, SPI_HandleTypeDef hspi, GPIO_TypeDef* CS_PORT, uint16_t CS_PIN);
-uint16_t MCP3008_Read_Channel(uint8_t channel);
+uint16_t MCP3008_Read_Channel(MCP3008_SPI* spi, uint8_t channel);
 
 #endif /* MCP3008_MCP3008_H_ */
