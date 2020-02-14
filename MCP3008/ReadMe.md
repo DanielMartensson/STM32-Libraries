@@ -19,7 +19,7 @@ Program example:
    * CPOL = Low
    */
   // Init the 10-Bit ADC
-	MCP3008_Init(&spi_mpc3008, &hspi2, GPIOA, GPIO_PIN_8);
+  MCP3008_Init(&spi_mpc3008, &hspi2, GPIOA, GPIO_PIN_8);
   
   // Read ADC's
   uint16_t adc0 = MCP3008_Read_Channel(&spi, 0); // Channel 0
