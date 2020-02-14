@@ -6,19 +6,18 @@ Written STM32 C-library. This is a 10-Bit ADC with 8 channels. Use this if you w
   #include "MCP3008/MCP3008.h"
   
   // Structs
-  MCP3008_SPI spi;
+  MCP3008_SPI spi_mpc3008;
   SPI_HandleTypeDef hspi2;
   
   /*
    * SPI settings:
    * CPHA = 1 Edge
-   * Prescaler = 2
+   * Prescaler = 8
    * First bit = MBS first
    * CPOL = Low
    */
-  
   // Init the 10-Bit ADC
-  MCP3008_init(&spi0, &hspi2, GPIOB, GPIO_PIN_14);
+	MCP3008_Init(&spi_mpc3008, &hspi2, GPIOA, GPIO_PIN_8);
   
   // Read ADC's
   uint16_t adc0 = MCP3008_Read_Channel(&spi, 0); // Channel 0
