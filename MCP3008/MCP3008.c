@@ -1,4 +1,4 @@
-*
+/*
  * MCP3008.c
  *
  *  Created on: 14 Feb 2020
