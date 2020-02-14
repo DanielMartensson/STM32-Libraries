@@ -1,6 +1,8 @@
 # MCP3008 8-Channel 10-Bit ADC
 Written STM32 C-library. This is a 10-Bit ADC with 8 channels. Use this if you want to have a potentiometer or something analog like a joystick because this ADC is very stable. This ADC does not fit measurements. Please use another ADC with higher bit resolution e.g ADS1115.
 
+Program example:
+
 ```
   // Include
   #include "MCP3008/MCP3008.h"
