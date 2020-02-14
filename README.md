@@ -23,6 +23,6 @@ Rewritten Arduino C++ library from ![Adafruit](https://github.com/adafruit/Adafr
 ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/ADS1015_ADS1115/Adafruit-1085-30091131-02.jpg)
 
 ## MCP3008 8-Channel 10-Bit ADC
-Written STM32 C-library. This is a 10-Bit ADC with 8 channels. Use this if you want to have a potentiometer or something analog like a joystick because this ADC is very stable. This ADC does not fit measurements. Please use another ADC with higher bit resolution e.g ADS1115.
+Written STM32 C library. This is a 10-Bit ADC with 8 channels. Use this if you want to have a potentiometer or something analog like a joystick because this ADC is very stable. This ADC does not fit measurements. Please use another ADC with higher bit resolution e.g ADS1115.
 
 ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/MCP3008/IC-MCP-3008-5-1-1-800x800.jpg)
