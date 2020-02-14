@@ -10,6 +10,7 @@ Program example:
   #include "MAX31865/MAX31865.h"
   
   // Structs
+  SPI_HandleTypeDef hspi2;
   MMAX31865_SPI spi0;
   MAX31865_SPI spi1;
   MAX31865_SPI spi2;
