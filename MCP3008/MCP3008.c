@@ -9,6 +9,11 @@
 
 /*
  * Set the MISO, MOSI, SCK and CS
+ * SPI settings:
+ * CPHA = 1 Edge
+ * Prescaler = 2
+ * First bit = MBS first
+ * CPOL = Low
  */
 void MCP3008_Init(MCP3008_SPI* spi, SPI_HandleTypeDef hspi, GPIO_TypeDef* CS_PORT, uint16_t CS_PIN){
   spi->hspi = hspi;
