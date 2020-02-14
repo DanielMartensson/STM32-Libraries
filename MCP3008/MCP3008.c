@@ -25,9 +25,9 @@ uint16_t MCP3008_Read_Channel(MCP3008_SPI* spi, uint8_t channel){
 	 * Declare data that we will send
 	 */
 	uint8_t pTxData[3] = {0};
-	pTxData[0] = ((0x01 << 7)|				// start bit
-				 (1 << 6)|					// SGL
-				 ((channel & 0x07) << 3)); 	// channel number
+	pTxData[0] = ((0x01 << 7)|		// start bit
+		     (1 << 6)|			// SGL
+		     ((channel & 0x07) << 3)); 	// channel number
 	pTxData[1] = 0x00;
 	pTxData[2] = 0x00;
 
