@@ -29,5 +29,5 @@ This ADC does not fit measurements. Please use another ADC with higher bit resol
   uint16_t adc4 = MCP3008_Read_Channel(&spi, 4); // Channel 4
   uint16_t adc5 = MCP3008_Read_Channel(&spi, 5); // Channel 5
   uint16_t adc6 = MCP3008_Read_Channel(&spi, 6); // Channel 6
-
+  uint16_t adc7 = MCP3008_Read_Channel(&spi, 7); // Channel 7
 ```
