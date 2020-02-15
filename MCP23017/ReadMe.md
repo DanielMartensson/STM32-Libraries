@@ -15,7 +15,7 @@ Program example:
 
   // Init
   MCP23017begin(&mcp_spi, &hi2c1, 0x00);
-	MCP23017pinMode(&mcp_spi, 0, MCP23017_OUTPUT);
+  MCP23017pinMode(&mcp_spi, 0, MCP23017_OUTPUT);
   
   // Set to high
   MCP23017digitalWrite(&mcp_spi, 0, MCP23017_HIGH); // GPA0 = 0
