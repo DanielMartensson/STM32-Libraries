@@ -9,11 +9,14 @@ Program example:
   #include "ADXL345/ADXL345.h"
 
   // Structure
+  SPI_HandleTypeDef hspi3;
   ADXL345_SPI_I2C adxl;
 
+  // Init - Select ONE option
   ADXL345_I2C(&adxl, &hi2c1, 0x53);		      // Declare object with address - I2C
   ADXL345_SPI(&adxl, &hspi3, GPIOA, GPIO_PIN_8);      // Declare object with CS - SPI
 
+  // Start up
   ADXL345powerOn(&adxl);                              // Power on the ADXL345
 	
   ADXL345setRangeSetting(&adxl, 16);                  // Give the range settings
