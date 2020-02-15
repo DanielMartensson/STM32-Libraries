@@ -31,3 +31,8 @@ Written STM32 C library. This is a 10-Bit ADC with 8 channels. Use this if you w
 Rewritten Arduino C++ library from ![SparkFun](https://github.com/sparkfun/SparkFun_ADXL345_Arduino_Library) to STM32 C library. This library share exactly the same functions as the SparkFuns's library. This accelerometer is very cheap but still good. It can measure the acceleration in x, y and z-axis with resolution of 10-bit.
 
 ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/ADXL345/ADXL345.jpg)
+
+## MCP23017 IO-Expander 16-bit
+Rewritten Arduino C++ library from ![Adafruit](https://github.com/adafruit/Adafruit-MCP23017-Arduino-Library) to STM32 C library. This library share exactly the same functions as the Adafruits's library. This IO-expander can be used if you don't want to waste IO-pins for e.g LCD or other fun stuff or you just have few IO-pins and want more. This can handle interrupts, read and digital outputs.
+
+![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/MCP23017/S%C3%A9lection_025.png)
