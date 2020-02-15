@@ -14,7 +14,7 @@ Program example:
   MCP23017_I2C mcp_spi;
 
   // Init
-  MCP23017begin(&mcp_spi, &hi2c1, 0x00); // There is an address table in the comments of this function.
+  MCP23017begin(&mcp_spi, &hi2c1, 0x00); // There is an address table in the comment of this function.
   MCP23017pinMode(&mcp_spi, 0, MCP23017_OUTPUT);
   
   // Set to high
