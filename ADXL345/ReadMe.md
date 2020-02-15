@@ -11,21 +11,21 @@ Program example:
   // Structure
   ADXL345_SPI_I2C adxl;
 
-  ADXL345_I2C(&adxl, &hi2c1, 0x53);			        // Declare object with address - I2C
-	ADXL345_SPI(&adxl, &hspi3, GPIOA, GPIO_PIN_8);// Declare object with CS - SPI
+  ADXL345_I2C(&adxl, &hi2c1, 0x53);		      // Declare object with address - I2C
+  ADXL345_SPI(&adxl, &hspi3, GPIOA, GPIO_PIN_8);      // Declare object with CS - SPI
 
-	ADXL345powerOn(&adxl);                        // Power on the ADXL345
+  ADXL345powerOn(&adxl);                              // Power on the ADXL345
 	
-	ADXL345setRangeSetting(&adxl, 16);            // Give the range settings
+  ADXL345setRangeSetting(&adxl, 16);                  // Give the range settings
 	                                              // Accepted values are 2g, 4g, 8g or 16g
 	                                              // Higher Values = Wider Measurement Range
 	                                              // Lower Values = Greater Sensitivity
 
-	ADXL345setSpiBit(&adxl, 0);                   // Configure the device to be in 4 wire SPI mode when set to '0' or 3 wire SPI mode when set to 1
+  ADXL345setSpiBit(&adxl, 0);                         // Configure the device to be in 4 wire SPI mode when set to '0' or 3 wire SPI mode when set to 1
 	                                              // Default: Set to 1
 	                                              // SPI pins on the ATMega328: 11, 12 and 13 as reference in SPI Library
 
-	ADXL345setActivityXYZ(&adxl, 1, 0, 0);        // Set to activate movement detection in the axes "adxl.setActivityXYZ(X, Y, Z);" (1 == ON, 0 == OFF)
+  ADXL345setActivityXYZ(&adxl, 1, 0, 0);              // Set to activate movement detection in the axes "adxl.setActivityXYZ(X, Y, Z);" (1 == ON, 0 == OFF)
 	ADXL345setActivityThreshold(&adxl, 75);       // 62.5mg per increment   // Set activity   // Inactivity thresholds (0-255)
 
 	ADXL345setInactivityXYZ(&adxl, 1, 0, 0);      // Set to detect inactivity in all the axes "adxl.setInactivityXYZ(X, Y, Z);" (1 == ON, 0 == OFF)
