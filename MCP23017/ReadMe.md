@@ -18,7 +18,7 @@ Program example:
   MCP23017pinMode(&mcp_spi, 0, MCP23017_OUTPUT);
   
   // Set to high
-  MCP23017digitalWrite(&mcp_spi, 0, MCP23017_HIGH); // GPA0 = 0
+  MCP23017digitalWrite(&mcp_spi, 0, MCP23017_HIGH); // GPA0 = Pin ID 0
 ```
 
 Physial Pin #| Pin Name | Pin ID
