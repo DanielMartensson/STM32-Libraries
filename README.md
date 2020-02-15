@@ -26,3 +26,8 @@ Rewritten Arduino C++ library from ![Adafruit](https://github.com/adafruit/Adafr
 Written STM32 C library. This is a 10-Bit ADC with 8 channels. Use this if you want to have a potentiometer or something analog like a joystick because this ADC is very stable. This ADC does not fit measurements. Please use another ADC with higher bit resolution e.g ADS1115.
 
 ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/MCP3008/IC-MCP-3008-5-1-1-800x800.jpg)
+
+## ADXL345 Accelerometer 10-bit
+Rewritten Arduino C++ library from ![SparkFun](https://github.com/sparkfun/SparkFun_ADXL345_Arduino_Library) to STM32 C library. This library share exactly the same functions as the SparkFuns's library. This accelerometer is very cheap but still good. It can measure the acceleration in x, y and z-axis with resolution of 10-bit.
+
+![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/ADXL345/ADXL345.jpg)
