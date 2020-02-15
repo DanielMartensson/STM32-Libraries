@@ -38,7 +38,7 @@ uint8_t MCP23017getLastInterruptPinValue(MCP23017_I2C* i2c);
 #define MCP23017bitClear(value, bit) ((value) &= ~(1UL << (bit)))
 #define MCP23017bitWrite(value, bit, bitvalue) (bitvalue ? MCP23017bitSet(value, bit) : MCP23017bitClear(value, bit))
 
-#define MCP23017_ADDRESS 0x20 << 1 // Important to have << 1 here for STM32
+#define MCP23017_ADDRESS 0x20
 
 // registers
 #define MCP23017_IODIRA 0x00

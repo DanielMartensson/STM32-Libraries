@@ -63,12 +63,21 @@ static void updateRegisterBit(MCP23017_I2C* i2c, uint8_t pin, uint8_t pValue, ui
 
 /**
  * Initializes the MCP23017 given its HW selected address, see datasheet for Address selection.
+ * Address table:
+ * A2, A1, A0 = 000 = 0x0
+ * A2, A1, A0 = 001 = 0x1
+ * A2, A1, A0 = 010 = 0x2
+ * A2, A1, A0 = 011 = 0x3
+ * A2, A1, A0 = 100 = 0x4
+ * A2, A1, A0 = 101 = 0x5
+ * A2, A1, A0 = 110 = 0x6
+ * A2, A1, A0 = 111 = 0x7
  */
 void MCP23017begin(MCP23017_I2C* i2c, I2C_HandleTypeDef* hi2c, uint8_t addr) {
 	if (addr > 7) {
 		addr = 7;
 	}
-	i2c->i2caddr = MCP23017_ADDRESS | addr;
+	i2c->i2caddr = (MCP23017_ADDRESS << 1 | addr << 1) ; // Important to have << 1 here for STM32
 	i2c->hi2c = hi2c;
 
 	if (HAL_I2C_IsDeviceReady(i2c->hi2c, i2c->i2caddr, 10, 10) != HAL_OK)
