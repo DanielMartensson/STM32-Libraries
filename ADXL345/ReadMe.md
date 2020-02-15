@@ -26,23 +26,23 @@ Program example:
 	                                              // SPI pins on the ATMega328: 11, 12 and 13 as reference in SPI Library
 
   ADXL345setActivityXYZ(&adxl, 1, 0, 0);              // Set to activate movement detection in the axes "adxl.setActivityXYZ(X, Y, Z);" (1 == ON, 0 == OFF)
-  ADXL345setActivityThreshold(&adxl, 75);       // 62.5mg per increment   // Set activity   // Inactivity thresholds (0-255)
+  ADXL345setActivityThreshold(&adxl, 75);             // 62.5mg per increment   // Set activity   // Inactivity thresholds (0-255)
 
-  ADXL345setInactivityXYZ(&adxl, 1, 0, 0);      // Set to detect inactivity in all the axes "adxl.setInactivityXYZ(X, Y, Z);" (1 == ON, 0 == OFF)
-  ADXL345setInactivityThreshold(&adxl, 75);     // 62.5mg per increment   // Set inactivity // Inactivity thresholds (0-255)
-  ADXL345setTimeInactivity(&adxl, 10);          // How many seconds of no activity is inactive?
+  ADXL345setInactivityXYZ(&adxl, 1, 0, 0);            // Set to detect inactivity in all the axes "adxl.setInactivityXYZ(X, Y, Z);" (1 == ON, 0 == OFF)
+  ADXL345setInactivityThreshold(&adxl, 75);           // 62.5mg per increment   // Set inactivity // Inactivity thresholds (0-255)
+  ADXL345setTimeInactivity(&adxl, 10);                // How many seconds of no activity is inactive?
 
-  ADXL345setTapDetectionOnXYZ(&adxl, 0, 0, 1);  // Detect taps in the directions turned ON "adxl.setTapDetectionOnX(X, Y, Z);" (1 == ON, 0 == OFF)
+  ADXL345setTapDetectionOnXYZ(&adxl, 0, 0, 1);        // Detect taps in the directions turned ON "adxl.setTapDetectionOnX(X, Y, Z);" (1 == ON, 0 == OFF)
 
   // Set values for what is considered a TAP and what is a DOUBLE TAP (0-255)
-  ADXL345setTapThreshold(&adxl, 50);            // 62.5 mg per increment
-  ADXL345setTapDuration(&adxl, 15);             // 625 μs per increment
-  ADXL345setDoubleTapLatency(&adxl, 80);        // 1.25 ms per increment
-  ADXL345setDoubleTapWindow(&adxl, 200);        // 1.25 ms per increment
+  ADXL345setTapThreshold(&adxl, 50);                 // 62.5 mg per increment
+  ADXL345setTapDuration(&adxl, 15);                  // 625 μs per increment
+  ADXL345setDoubleTapLatency(&adxl, 80);             // 1.25 ms per increment
+  ADXL345setDoubleTapWindow(&adxl, 200);             // 1.25 ms per increment
 
   // Set values for what is considered FREE FALL (0-255)
-  ADXL345setFreeFallThreshold(&adxl, 7);        // (5 - 9) recommended - 62.5mg per increment
-  ADXL345setFreeFallDuration(&adxl, 30);        // (20 - 70) recommended - 5ms per increment
+  ADXL345setFreeFallThreshold(&adxl, 7);             // (5 - 9) recommended - 62.5mg per increment
+  ADXL345setFreeFallDuration(&adxl, 30);             // (20 - 70) recommended - 5ms per increment
 
   ADXL345InactivityINT(&adxl, 1);
   ADXL345ActivityINT(&adxl, 1);
