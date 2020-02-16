@@ -6,9 +6,17 @@ I hope that you like this library and want to share it with me. Please star this
 and fork it. This is my schedule.
 
 
-* a
-
-
+* TMC2209 Stepper motor driver 
+* NRF24L01 2.4 GHz radio transmitter and receiver
+* AT-09 Bluetooth 4.0 transmitter and receiver
+* HX711 ADC load cell sensor 
+* SSD1306 128x32 LCD I2C 
+* PCA9685 16-Bit PWM servo driver 
+* MCP2515 CAN-bus transmitter and receiver
+* SD card reader library 
+* MPU-9250 9DOF gyro, accelerometer and magnetometer
+* DS3231 Real-Time clock
+* ArduCam OV5642 
 
 
 ## Liquid Crystal LCD Display with I2C Expander IC
