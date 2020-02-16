@@ -16,6 +16,7 @@ and fork it. This is my schedule.
 * MPU-9250 9DOF gyro, accelerometer and magnetometer
 * DS3231 Real-Time clock
 * ArduCam OV5642 
+* ESP8266 ESP-01 WiFi HTTP server
 
 ## Liquid Crystal LCD Display with I2C Expander IC
 Rewritten Arduino C++ library from ![johnrickman](https://github.com/johnrickman/LiquidCrystal_I2C) to STM32 C library. Added some more features as well. Works for both 16x2 LCD and 20x4 LCD etc.
