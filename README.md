@@ -15,7 +15,7 @@ and fork it. This is my schedule.
 * SD card reader library 
 * MPU-9250 9DOF gyro, accelerometer and magnetometer
 * DS3231 Real-Time clock
-* ArduCam OV5642 
+* ArduCam OV5642 camera module 
 * ESP8266 ESP-01 WiFi HTTP server
 
 ## Liquid Crystal LCD Display with I2C Expander IC
