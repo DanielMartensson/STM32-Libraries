@@ -2,7 +2,7 @@
 Collection of rewritten Arduino C++ libraries to STM32 C libraies, and some made by my self.
 
 ## TODO
-I hope that you like this library and want to share it with me. Please star this library 
+I hope that you like this library and want to share it with others. Please star this library 
 and fork it. This is my schedule.
 
 * TMC2209 Stepper motor driver 
