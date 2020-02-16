@@ -1,5 +1,15 @@
 # STM32-Libraries
-Collection of rewritten Arduino C++ libraries to STM32 C libraies. 
+Collection of rewritten Arduino C++ libraries to STM32 C libraies, and some made by my self.
+
+## TODO
+I hope that you like this library and want to share it with me. Please star this library 
+and fork it. This is my schedule.
+
+
+* a
+
+
+
 
 ## Liquid Crystal LCD Display with I2C Expander IC
 Rewritten Arduino C++ library from ![johnrickman](https://github.com/johnrickman/LiquidCrystal_I2C) to STM32 C library. Added some more features as well. Works for both 16x2 LCD and 20x4 LCD etc.
