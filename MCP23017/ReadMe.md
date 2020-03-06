@@ -11,14 +11,14 @@ Program example:
 
   // Structs
   I2C_HandleTypeDef hi2c1;
-  MCP23017_I2C mcp_spi;
+  MCP23017_I2C mcp_i2c;
 
   // Init
-  MCP23017begin(&mcp_spi, &hi2c1, 0x00); // There is an address table in the comment of this function.
-  MCP23017pinMode(&mcp_spi, 0, MCP23017_OUTPUT);
+  MCP23017begin(&mcp_i2c, &hi2c1, 0x00); // There is an address table in the comment of this function.
+  MCP23017pinMode(&mcp_i2c, 0, MCP23017_OUTPUT);
   
   // Set to high
-  MCP23017digitalWrite(&mcp_spi, 0, MCP23017_HIGH); // GPA0 = Pin ID 0
+  MCP23017digitalWrite(&mcp_i2c, 0, MCP23017_HIGH); // GPA0 = Pin ID 0
 ```
 
 Physial Pin #| Pin Name | Pin ID
