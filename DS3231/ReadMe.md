@@ -12,8 +12,8 @@ Program example:
   I2C_HandleTypeDef hi2c1;
   DS3231_I2C DS_i2c;
 
-  // Init RTC - Set larm for: Week = 0, Date = 1 and also the address 0x00
-  DS3231_init(&DS_i2c, &hi2c1, 0x0, 0, 1);
+  // Init RTC - Set larm for: Week = false, Date = true and also the address 0x00
+  DS3231_init(&DS_i2c, &hi2c1, 0x0, false, true);
   // Set the clock - Second 55. Hour 12. Day 5(Friday). Day of month 6. Month of year 3 (Mars). Year 2020.
   DS3231_setClock(&DS_i2c, 55, 59, 12, 5, 6, 3, 20);
   // Set alarm for the week - Minute 0. Hour 13. Day 5
