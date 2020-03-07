@@ -53,3 +53,9 @@ Rewritten Arduino C++ library from ![SparkFun](https://github.com/sparkfun/Spark
 Rewritten Arduino C++ library from ![Adafruit](https://github.com/adafruit/Adafruit-MCP23017-Arduino-Library) to STM32 C library. This library share exactly the same functions as the Adafruits's library. This IO-expander can be used if you don't want to waste IO-pins for e.g LCD or other fun stuff or you just have few IO-pins and want more. This can handle interrupts, read and digital outputs.
 
 ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/MCP23017/S%C3%A9lection_025.png)
+
+## DS3231 RTC with larm
+Written STM32 C library by my self. This is a well known RTC with two alarm functions for booth weeks and dates.
+This RTC is one of the better RTC's out there, but still cheap. This RTC has an output pin that goes low when an alarm appears or both alarms appears. 
+
+![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/DS3231/S%C3%A9lection_041.png)
