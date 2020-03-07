@@ -14,7 +14,6 @@ and fork it. This is my schedule.
 * MCP2515 CAN-bus transmitter and receiver
 * SD card reader library 
 * MPU-9250 9DOF gyro, accelerometer and magnetometer
-* DS3231 Real-Time clock
 * ArduCam OV5642 camera module 
 * ESP8266 ESP-01 WiFi HTTP server
 
