@@ -17,8 +17,6 @@ typedef struct {
 	uint8_t second;
 	uint8_t minute;
 	uint8_t hour;
-	uint8_t AM_PM_Enable;
-	uint8_t AM_or_PM;
 	uint8_t day;
 	uint8_t date;
 	uint8_t month;
