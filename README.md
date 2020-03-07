@@ -53,7 +53,7 @@ Rewritten Arduino C++ library from ![Adafruit](https://github.com/adafruit/Adafr
 
 ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/MCP23017/S%C3%A9lection_025.png)
 
-## DS3231 RTC with larm
+## DS3231 RTC with 2 alarms
 Written STM32 C library by my self. This is a well known RTC with two alarm functions for booth weeks and dates.
 This RTC is one of the better RTC's out there, but still cheap. This RTC has an output pin that goes low when an alarm appears or both alarms appears. Else the output is high when no alarms appear. That's a way to make sure that the RTC is still alive.
 
