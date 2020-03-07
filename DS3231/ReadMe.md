@@ -1,4 +1,4 @@
-# DS3231 RTC with larm
+# DS3231 RTC with 2 alarm
 This is an easy RTC with very high accuracy in time. You can use this if you want to connect a larm of week or date with it.
 Perhaps both. This is much better than the low budget RTC DS1307. The output pin SQW will become HIGH when no alarms exist. SQW pin will become LOW when an alarm appear or all alarms are activated. Then you can make sure that if SQW is HIGH, then the RTC is still alive.
 
