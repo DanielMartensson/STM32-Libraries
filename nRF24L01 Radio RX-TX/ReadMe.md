@@ -3,7 +3,7 @@
 This is a very popular and robust radio and transmitter and reciever. This can be used with STM32 boards and it works fine.
 I don't know what to say any more, rather than it can send data by using SPI channel. 
 I have rewritten this from ![MYaqoobEmbedded](https://github.com/MYaqoobEmbedded/STM32-Tutorials/tree/master/Tutorial%2024%20-%20NRF24L01%20Radio%20Transceiver)
-so it can be used with same SPI line.
+so it can be used with same SPI line. I have't change anything in his logic, only made it possible for using structs as objects.
 
 Program example:
 
