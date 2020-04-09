@@ -1,4 +1,4 @@
-# nRF24L01 / nRF24L01+
+# nRF24L01 / nRF24L01+ Radio Transmitter and Receiver
 
 This is a very popular and robust radio and transmitter and reciever. This can be used with STM32 boards and it works fine.
 I don't know what to say any more, rather than it can send data by using SPI channel. 
