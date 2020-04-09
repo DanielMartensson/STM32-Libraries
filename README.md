@@ -6,7 +6,6 @@ I hope that you like this library and want to share it with others. Please star 
 and fork it. This is my schedule.
 
 * TMC2209 Stepper motor driver 
-* NRF24L01 2.4 GHz radio transmitter and receiver
 * AT-09 Bluetooth 4.0 transmitter and receiver
 * HX711 ADC load cell sensor 
 * SSD1306 128x32 LCD I2C 
