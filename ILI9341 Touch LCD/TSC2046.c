@@ -5,7 +5,7 @@
  *      Author: Muhammad Yaqoob, rewritted by Daniel Mårtensson
  */
 
-#include "../LCD_ILI9341/LCD_ILI9341.h"
+#include "LCD_ILI9341.h"
 
 //Functions definitions
 // Send TSC2046 Command and wait for a response
