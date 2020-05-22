@@ -5,7 +5,7 @@
  *      Author: Muhammad Yaqoob, rewritted by Daniel Mårtensson
  */
 
-#include "../LCD_ILI9341/LCD_ILI9341.h"
+#include "LCD_ILI9341.h"
 
 //Text simple font array (You can your own font)
 static const unsigned char font1[] = {
