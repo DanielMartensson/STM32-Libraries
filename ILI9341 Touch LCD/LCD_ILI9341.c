@@ -5,7 +5,7 @@
  *      Author: Muhammad Yaqoob, rewritted by Daniel Mårtensson
  */
 
-#include "LCD_ILI9341.h"
+#include "../LCD_ILI9341/LCD_ILI9341.h"
 
 //Text simple font array (You can your own font)
 static const unsigned char font1[] = {
@@ -651,6 +651,9 @@ void ILI9341_printImage(ILI9341_SPI *spi, uint16_t x, uint16_t y, uint16_t w, ui
 
 // Set screen rotation
 void ILI9341_setRotation(ILI9341_SPI *spi, uint8_t rotate) {
+	if(spi->ScreenOrientation == rotate)
+		return; // No action
+
 	spi->ScreenOrientation = rotate;
 	switch (rotate) {
 	case 1:
