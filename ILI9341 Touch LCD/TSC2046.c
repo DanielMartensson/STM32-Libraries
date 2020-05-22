@@ -5,7 +5,7 @@
  *      Author: Muhammad Yaqoob, rewritted by Daniel Mårtensson
  */
 
-#include "LCD_ILI9341.h"
+#include "../LCD_ILI9341/LCD_ILI9341.h"
 
 //Functions definitions
 // Send TSC2046 Command and wait for a response
@@ -18,11 +18,11 @@ static uint16_t TSC2046_SendCommand(ILI9341_SPI *spi, uint8_t cmd) {
 	HAL_SPI_Transmit(spi->lcdHandle, spiBuf, 1, 10);
 	//Wait for response (3 ms)
 	HAL_Delay(3);
-	if (HAL_SPI_Receive(spi->lcdHandle, &spiBuf[1], 2, 10) == HAL_OK)
+	if (HAL_SPI_Receive(spi->lcdHandle, &spiBuf[1], 2, 10) == HAL_OK){
 		return16 = (spiBuf[1] << 4) + (spiBuf[2] >> 4);
-	else
+	}else{
 		return16 = 0;
-
+	}
 	HAL_GPIO_WritePin(spi->CS_PORT_TOUCH, spi->CS_PIN_TOUCH, GPIO_PIN_SET);
 
 	return return16;
@@ -45,12 +45,12 @@ static uint16_t TSC2046_getRaw_Z(ILI9341_SPI *spi) {
 // Print calibration points
 //i. Top-Left corner point
 static void TSC2046_TL_point(ILI9341_SPI *spi) {
-	ILI9341_fillCircle(spi, 10, 10, 3, COLOR_RED);
+	ILI9341_fillCircle(spi, 1, 1, 3, COLOR_RED);
 	ILI9341_printText(spi, "Press here", 20, 30, COLOR_RED, COLOR_RED, 1);
 }
 //ii. Bottom-Right corner point
 static void TSC2046_BR_point(ILI9341_SPI *spi) {
-	ILI9341_fillCircle(spi, spi->myTS_Calibrate.Width - 10, spi->myTS_Calibrate.Height - 10, 3, COLOR_RED);
+	ILI9341_fillCircle(spi, spi->myTS_Calibrate.Width - 1, spi->myTS_Calibrate.Height - 1, 3, COLOR_RED);
 	ILI9341_printText(spi, "Press here", spi->myTS_Calibrate.Width - 80, spi->myTS_Calibrate.Height - 40, COLOR_RED, COLOR_RED, 1);
 }
 
@@ -149,8 +149,8 @@ void TSC2046_Calibrate(ILI9341_SPI *spi) {
 	spi->myTS_Calibrate.Scale_X = (spi->myTS_Calibrate.Width + 0.0f) / (spi->myTS_Calibrate.BR_X - spi->myTS_Calibrate.TL_X + 0.0f);
 	spi->myTS_Calibrate.Scale_Y = (spi->myTS_Calibrate.Height + 0.0f) / (spi->myTS_Calibrate.BR_Y - spi->myTS_Calibrate.TL_Y + 0.0f);
 	//2. Calculate Scalling ()
-	spi->myTS_Calibrate.Bias_X = -10 - spi->myTS_Calibrate.Scale_X * spi->myTS_Calibrate.TL_X; // -10 is for bias. You can change that if you want too
-	spi->myTS_Calibrate.Bias_Y = -10 - spi->myTS_Calibrate.Scale_Y * spi->myTS_Calibrate.TL_Y; // -10 is for bias. You can change that if you want too
+	spi->myTS_Calibrate.Bias_X = -1 - spi->myTS_Calibrate.Scale_X * spi->myTS_Calibrate.TL_X; // -1 is for bias. Change this so you have 100% accuracy at center of the LCD
+	spi->myTS_Calibrate.Bias_Y = -1 - spi->myTS_Calibrate.Scale_Y * spi->myTS_Calibrate.TL_Y; // -1 is for bias. Change this so you have 100% accuracy at center of the LCD
 
 }
 
@@ -174,6 +174,7 @@ void TSC2046_GetTouchData(ILI9341_SPI *spi) {
 
 	//X_Touch value
 	spi->myTsData.X = spi->myTS_Calibrate.Scale_X * spi->localRawTouch.x_touch + spi->myTS_Calibrate.Bias_X;
+
 	//Y_Touch value
 	spi->myTsData.Y = spi->myTS_Calibrate.Scale_Y * spi->localRawTouch.y_touch + spi->myTS_Calibrate.Bias_Y;
 }
