@@ -2,7 +2,7 @@
  * FrameTouch.c
  *
  *  Created on: May 23, 2020
- *      Author: root
+ *      Author: Daniel Mårtensson
  */
 
 #include "LCDTools.h"
