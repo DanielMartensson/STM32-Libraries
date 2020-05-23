@@ -2,6 +2,13 @@
 
 This is a simple LCD with touch feature. The communication protocol is SPI. The touch is not perfect for precision and speed, but at least you can display an image, press some large buttons and write a emoij. This LCD works perfect for simple use where you don't want physical buttons and instead want every button on your embedded system onto the LCD screen.
 
+This library contains
+- Windows 3.11 Question dialog
+- Icons
+- Plot with 2 graphs
+- Number pad
+- Frames
+
 I recommend this LCD due to its price.
 
 Program example:
