@@ -7,14 +7,15 @@ I recommend this LCD due to its price.
 Program example:
 
 ```
+  // Include
   #include "main.h"
   #include "LCD_ILI9341/LCDCore/LCD_ILI9341.h"
   #include "LCD_ILI9341/LCDTools/LCDTools.h"
   #include "stdbool.h"
   #include <stdlib.h>
 
+  // Structure
   SPI_HandleTypeDef hspi2;
-
   ILI9341_SPI spi;
 
   int main(void)
