@@ -5,7 +5,7 @@ z-axis with resolution 10-bit. ADXL345 have both I2C and SPI communication.
 Program example:
 
 ```
-// Include
+  // Include
   #include "ADXL345/ADXL345.h"
 
   // Structure
