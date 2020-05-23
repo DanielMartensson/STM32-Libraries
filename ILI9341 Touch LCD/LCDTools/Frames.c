@@ -2,7 +2,7 @@
  * Frames.c
  *
  *  Created on: May 22, 2020
- *      Author: root
+ *      Author: Daniel Mårtensson
  */
 
 #include "LCDTools.h"
