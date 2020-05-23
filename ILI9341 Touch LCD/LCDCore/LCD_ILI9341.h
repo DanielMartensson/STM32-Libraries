@@ -5,8 +5,8 @@
  *      Author: Muhammad Yaqoob, rewritted by Daniel Mårtensson
  */
 
-#ifndef SRC_LCD_ILI9341_LCD_ILI9341_H_
-#define SRC_LCD_ILI9341_LCD_ILI9341_H_
+#ifndef SRC_LCD_ILI9341_LCDCORE_LCD_ILI9341_H_
+#define SRC_LCD_ILI9341_LCDCORE_LCD_ILI9341_H_
 
 #include "main.h"
 #include "stdlib.h"
@@ -179,5 +179,4 @@ uint8_t ILI9341_getRotation(ILI9341_SPI* spi);
 void TSC2046_Calibrate(ILI9341_SPI* spi);
 void TSC2046_GetTouchData(ILI9341_SPI* spi);
 
-
-#endif /* SRC_LCD_ILI9341_LCD_ILI9341_H_ */
+#endif /* SRC_LCD_ILI9341_LCDCORE_LCD_ILI9341_H_ */
