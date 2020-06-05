@@ -72,3 +72,9 @@ I have rewritten this from ![MYaqoobEmbedded](https://github.com/MYaqoobEmbedded
 so it can be used with same SPI line. I have't change anything in his logic, only made it possible for using structs as objects. I have also made some simplifications in this library like having only two files.
 
 ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/nRF24L01%20Radio%20RX-TX/S%C3%A9lection_060.png)
+
+# SSD1306 128x32 OLED LCD
+
+This is a simple OLED LCD that have two colors only. Use this LCD if you want to show something simple like a number or display a tiny plot. Notice that this LCD can only have one address. So only one SSD1306 128x32 per project. Connection I2C.
+
+![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/SSD1306%20128x32/S%C3%A9lection_008.png)
