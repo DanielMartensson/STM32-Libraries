@@ -153,7 +153,23 @@ static void pixel(uint8_t x, uint8_t y, bool color){
 		else
 			gddram[line][x] &= ~byte;
 	}
-	update();
+}
+
+static void draw_char(char c, uint8_t x, uint8_t y) {
+    // Convert the character to an index
+    c = c & 0x7F;
+    if (c < ' ') {
+        c = 0;
+    } else {
+        c -= ' ';
+    }
+
+    // Draw pixels
+    for (uint8_t j = 0; j < CHAR_WIDTH; j++) {
+        for (uint8_t i = 0; i < CHAR_HEIGHT; i++) {
+        	pixel(x + j, y + i, fonts[(uint8_t) c][j] & (1 << i));
+        }
+    }
 }
 
 void SSD1306_init(I2C_HandleTypeDef *i2c) {
@@ -311,30 +327,15 @@ void SSD1306_draw_line(uint8_t x0, uint8_t x1, uint8_t y0, uint8_t y1){
 	  }
 	  D = D + 2*dy;
 	}
+	update();
 }
 
 void SSD1306_write_text(char* str, uint8_t x, uint8_t y) {
     while (*str) {
-    	SSD1306_draw_char(*str++, x, y);
+    	draw_char(*str++, x, y);
         x += CHAR_WIDTH;
     }
-}
-
-void SSD1306_draw_char(char c, uint8_t x, uint8_t y) {
-    // Convert the character to an index
-    c = c & 0x7F;
-    if (c < ' ') {
-        c = 0;
-    } else {
-        c -= ' ';
-    }
-
-    // Draw pixels
-    for (uint8_t j = 0; j < CHAR_WIDTH; j++) {
-        for (uint8_t i = 0; i < CHAR_HEIGHT; i++) {
-        	pixel(x + j, y + i, fonts[(uint8_t) c][j] & (1 << i));
-        }
-    }
+    update();
 }
 
 void SSD1306_write_bitmap(uint8_t x, uint8_t y, uint8_t* bitmap, uint8_t rows, uint8_t columns){
@@ -346,4 +347,5 @@ void SSD1306_write_bitmap(uint8_t x, uint8_t y, uint8_t* bitmap, uint8_t rows, u
 			}
 	    }
 	}
+	update();
 }
