@@ -8,7 +8,6 @@ and fork it. This is my schedule.
 * TMC2209 Stepper motor driver 
 * AT-09 Bluetooth 4.0 transmitter and receiver
 * HX711 ADC load cell sensor 
-* SSD1306 128x32 LCD I2C 
 * PCA9685 16-Bit PWM servo driver 
 * MCP2515 CAN-bus transmitter and receiver
 * SD card reader library 
