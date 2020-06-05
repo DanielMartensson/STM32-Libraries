@@ -15,7 +15,7 @@ Program example:
   // Code
   SSD1306_init(&hi2c1);
   SSD1306_draw_line(0, 15, 0, 3);
-  SSD1306_draw_char('A', 0, 8);
+  SSD1306_dim(true);
   SSD1306_write_text("Megaman!1", 15, 15);
   uint8_t megaman32x32[] = {0x00,0x00,0x00,0x00
                            ,0x00,0x00,0x00,0x00
