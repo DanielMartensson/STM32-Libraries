@@ -7,6 +7,7 @@ Program example:
 ```
 
   // include
+  #include "main.h"
   #include "SSD1306 128x32/SSD1306.h"
   
   // Struct
