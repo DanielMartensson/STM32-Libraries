@@ -8,8 +8,21 @@ With this code, you can read, write, delete, change text files on a micro SD car
 - 4. Copy over the program example to your main.c file
 
 You can follow the pictures.
+UART config:
 
+![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/Micro%20SD%20SPI/UART.png)
 
+SPI config:
+
+![a](https://github.com/DanielMartensson/STM32-Libraries/blob/master/Micro%20SD%20SPI/SPI.png)
+
+FATFS config:
+
+![a](https://github.com/DanielMartensson/STM32-Libraries/blob/master/Micro%20SD%20SPI/FATFS.png)
+
+User_diskio.c and fatfs_sd.h and fatfs.c location:
+
+![a](https://github.com/DanielMartensson/STM32-Libraries/blob/master/Micro%20SD%20SPI/User_diskio.png)
 
 Program example:
 ```
