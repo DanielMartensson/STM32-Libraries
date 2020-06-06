@@ -10,6 +10,8 @@
 
 #include "stdbool.h"
 #include "main.h"
+#include "stdlib.h"
+#define SSD1306_swap(a, b) { int16_t t = a; a = b; b = t; }
 
 void SSD1306_init(I2C_HandleTypeDef *i2c);
 void SSD1306_invert_display(bool invert);
