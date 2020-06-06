@@ -301,31 +301,41 @@ void SSD1306_dim(uint8_t dim) {
 }
 
 void SSD1306_draw_line(uint8_t x0, uint8_t x1, uint8_t y0, uint8_t y1){
-	// Swap
-	int16_t y = 0;
-	if(x0 > x1){
-		y = x0;
-		x0 = x1;
-		x1 = y;
-	}
-	if(y0 > y1){
-		y = y0;
-		y0 = y1;
-		y1 = y;
+	int16_t steep = abs(y1 - y0) > abs(x1 - x0);
+	if (steep) {
+		SSD1306_swap(x0, y0);
+		SSD1306_swap(x1, y1);
 	}
 
-	int16_t dx = x1 - x0;
-	int16_t dy = y1 - y0;
-	int16_t D = 2*dy - dx;
-	y = y0;
+	if (x0 > x1) {
+		SSD1306_swap(x0, x1);
+		SSD1306_swap(y0, y1);
+	}
 
-	for (uint8_t x = x0; x <= x1; x++) {
-	  pixel(x, y ,true);
-	  if (D > 0) {
-	    y++;
-	    D = D - 2*dx;
-	  }
-	  D = D + 2*dy;
+	int16_t dx, dy;
+	dx = x1 - x0;
+	dy = abs(y1 - y0);
+
+	int16_t err = dx / 2;
+	int16_t ystep;
+
+	if (y0 < y1) {
+		ystep = 1;
+	} else {
+		ystep = -1;
+	}
+
+	for (; x0 <= x1; x0++) {
+		if (steep) {
+			pixel(y0, x0, true);
+		} else {
+			pixel(x0, y0, true);
+		}
+		err -= dy;
+		if (err < 0) {
+			y0 += ystep;
+			err += dx;
+		}
 	}
 	update();
 }
