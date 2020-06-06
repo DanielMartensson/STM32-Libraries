@@ -79,6 +79,6 @@ My own C code for STM32. This is a simple OLED LCD that have two colors only. Us
 ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/SSD1306%20128x32/S%C3%A9lection_008.png)
 
 # Micro SD SPI 
-This code is from ![Controllers Tech](https://controllerstech.com) and I have made a very quick setup how to get started, most for my own purposes because I'm going to use this library in the near future. With this code you can read, write, delete and change text files with a STM32 microcontroller. 
+This code is from [Controllers Tech](https://controllerstech.com) and I have made a very quick setup how to get started, most for my own purposes because I'm going to use this library in the near future. With this code you can read, write, delete and change text files with a STM32 microcontroller. 
 
 ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/Micro%20SD%20SPI/S%C3%A9lection_015.png)
