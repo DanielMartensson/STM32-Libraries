@@ -5,7 +5,6 @@ a tiny plot. Notice that this LCD can only have one address. So only one SSD1306
 Program example:
 
 ```
-
   // include
   #include "main.h"
   #include "SSD1306 128x32/SSD1306.h"
