@@ -73,7 +73,7 @@ so it can be used with same SPI line. I have't change anything in his logic, onl
 
 # SSD1306 128x32 OLED LCD
 
-My own C code for STM32. This is a simple OLED LCD that have two colors only. Use this LCD if you want to show something simple like a number or display a tiny plot. Notice that this LCD can only have one address. So only one SSD1306 128x32 per project. Connection I2C.
+My own C code for STM32. This is a simple OLED LCD that have two colors only. Use this LCD if you want to show something simple like a number or display a tiny plot. Notice that this LCD can only have one address. So only one SSD1306 128x32 per project. Connection I2C. I prefer this LCD for debugging.
 
 ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/SSD1306%20128x32/S%C3%A9lection_008.png)
 
