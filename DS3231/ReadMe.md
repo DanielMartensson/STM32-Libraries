@@ -6,6 +6,7 @@ Program example:
 
 ```
   //Include
+  #include "main.h"
   #include "DS3231/DS3231.h"
 
   // Structures
