@@ -1,6 +1,16 @@
 # Micro SD SPI
 With this code, you can read, write, delete, change text files on a micro SD card. I will show you an example how to get started.
 
+# How to use
+- 1. Begin to implement fatfs_sd.c and fatfs_sd.h where you can access fatfs_sd.h 
+- 2. Enable UART and SPI and FATFS. Notice that you cannot have so fast SPI here! Maximum 2.25 Mb/s for SD cards.
+- 3. Copy over user_diskio.c from this GitHub repository to the user_diskio.c inside your STM32 IDE.
+- 4. Copy over the program example to your main.c file
+
+You can follow the pictures.
+
+
+
 Program example:
 ```
 // Include
