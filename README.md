@@ -10,7 +10,6 @@ and fork it. This is my schedule.
 * HX711 ADC load cell sensor 
 * PCA9685 16-Bit PWM servo driver 
 * MCP2515 CAN-bus transmitter and receiver
-* SD card reader library 
 * MPU-9250 9DOF gyro, accelerometer and magnetometer
 * ArduCam OV5642 camera module 
 * ESP8266 ESP-01 WiFi HTTP server
@@ -78,3 +77,8 @@ so it can be used with same SPI line. I have't change anything in his logic, onl
 My own C code for STM32. This is a simple OLED LCD that have two colors only. Use this LCD if you want to show something simple like a number or display a tiny plot. Notice that this LCD can only have one address. So only one SSD1306 128x32 per project. Connection I2C.
 
 ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/SSD1306%20128x32/S%C3%A9lection_008.png)
+
+# Micro SD SPI 
+This code is from ![Controllers Tech](https://www.youtube.com/watch?v=spVIZO-jbxE) and I have made a very quick setup how to get started. With this code you can read, write, delete and change text files with a STM32 microcontroller.
+
+![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/Micro%20SD%20SPI/S%C3%A9lection_015.png)
