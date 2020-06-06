@@ -8,7 +8,6 @@ and fork it. This is my schedule.
 * TMC2209 Stepper motor driver 
 * AT-09 Bluetooth 4.0 transmitter and receiver
 * HX711 ADC load cell sensor 
-* PCA9685 16-Bit PWM servo driver 
 * MCP2515 CAN-bus transmitter and receiver
 * MPU-9250 9DOF gyro, accelerometer and magnetometer
 * ArduCam OV5642 camera module 
@@ -82,3 +81,9 @@ My own C code for STM32. This is a simple OLED LCD that have two colors only. Us
 This code is from [Controllers Tech](https://www.youtube.com/watch?v=spVIZO-jbxE) and I have made a very quick setup how to get started, most for my own purposes because I'm going to use this library in the near future. With this code you can read, write, delete and change text files with a STM32 microcontroller. 
 
 ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/Micro%20SD%20SPI/S%C3%A9lection_015.png)
+
+# PCA9685 PWM Servo driver
+This is a library for controlling 5V servos with the PCA9685 IC chip. This IC chip has 16 channels with 12-bit PWM. Works great
+for small servos. A good thing with this library is that this library share the same functions as Adafruit's PCA9685 library!
+
+![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/PCA9685%20PWM%20Servo/S%C3%A9lection_016.png)
