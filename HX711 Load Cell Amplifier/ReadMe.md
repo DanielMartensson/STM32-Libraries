@@ -14,7 +14,8 @@ HX711 hx;
 
 int main(void)
 {
-
+  // PD_SCK is digital output
+  // DOUT is digital input with a pull-up resistor activated
   HX711_begin(&hx, HX711_PD_SCK_GPIO_Port, HX711_PD_SCK_Pin, HX711_DOUT_GPIO_Port, HX711_DOUT_Pin, 128);
   HX711_set_scale(&hx, 2280.f); // Set scale
   HX711_tare(&hx, 0); // Reset scale to 0
