@@ -7,7 +7,6 @@ and fork it. This is my schedule.
 
 * TMC2209 Stepper motor driver 
 * AT-09 Bluetooth 4.0 transmitter and receiver
-* HX711 ADC load cell sensor 
 * MCP2515 CAN-bus transmitter and receiver
 * MPU-9250 9DOF gyro, accelerometer and magnetometer
 * ArduCam OV5642 camera module 
@@ -87,3 +86,9 @@ This is a library for controlling 5V servos with the PCA9685 IC chip. This IC ch
 for small servos. A good thing with this library is that this library share the same functions as [Adafruit's PCA9685 library](https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library)
 
 ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/PCA9685%20PWM%20Servo/S%C3%A9lection_016.png)
+
+# HX711 Load Cell 24-bit Amplifier 
+This is a load cell amplifier with 24-bit resolution. I have rewrite Arduino C++ to STM32 C code from [bogde](https://github.com/bogde/HX711).
+This library works great with STM32. 
+
+![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/HX711%20Load%20Cell%20Amplifier/S%C3%A9lection_018.png)
