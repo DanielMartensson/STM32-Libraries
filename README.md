@@ -84,6 +84,6 @@ This code is from [Controllers Tech](https://www.youtube.com/watch?v=spVIZO-jbxE
 
 # PCA9685 PWM Servo driver
 This is a library for controlling 5V servos with the PCA9685 IC chip. This IC chip has 16 channels with 12-bit PWM. Works great
-for small servos. A good thing with this library is that this library share the same functions as Adafruit's PCA9685 library!
+for small servos. A good thing with this library is that this library share the same functions as [Adafruit's PCA9685 library](https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library)
 
 ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/PCA9685%20PWM%20Servo/S%C3%A9lection_016.png)
