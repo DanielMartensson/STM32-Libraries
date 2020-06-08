@@ -8,7 +8,6 @@ and fork it. This is my schedule.
 * TMC2209 Stepper motor driver 
 * AT-09 Bluetooth 4.0 transmitter and receiver
 * MCP2515 CAN-bus transmitter and receiver
-* MPU-9250 9DOF gyro, accelerometer and magnetometer
 * ArduCam OV5642 camera module 
 * ESP8266 ESP-01 WiFi HTTP server
 
@@ -23,15 +22,16 @@ Rewritten STM32 C library from ![4ilo](https://github.com/4ilo/MAX31865-Stm32HAL
 
 ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/MAX31865/Selecci%C3%B3n_021.png)
 
-## ILI9341 LCD with touch (Under development!)
+## ILI9341 LCD with touch
 Rewritten STM32 C library from ![MYaqoobEmbedded](https://github.com/MYaqoobEmbedded/STM32-Tutorials/tree/master/Tutorial%2026%20-%20SPI%20LCD%20%2B%20Resistive%20touch). MYaqoobEmbedded is a very professional STM32 coder but I have rewritted some code of his library. My library is 90% based on MYaqoobEmbedded's library, but I'm using only one SPI peripheral, and also this library is writted with more as a "object oriented" C library as my other libraries are as well. That means you can have multiple ILI9341 LCD's on the same SPI peripheral. All you need to do is declare more structures for the ILI9341 LCD. View the code example in the folder and you will understand.
 
 This library contains
 - Windows 3.11 Question dialog
 - Icons
+- Start up screen
 - Plot with 2 graphs
 - Number pad
-- Frames
+- Frames etc.
 
 ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/ILI9341%20Touch%20LCD/S%C3%A9lection_013.png)
 
