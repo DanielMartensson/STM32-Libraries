@@ -17,7 +17,7 @@ static uint16_t TSC2046_SendCommand(ILI9341_SPI *spi, uint8_t cmd) {
 	spiBuf[0] = cmd;
 	HAL_SPI_Transmit(spi->lcdHandle, spiBuf, 1, 10);
 	//Wait for response (3 ms)
-	HAL_Delay(3);
+	//HAL_Delay(3);
 	if (HAL_SPI_Receive(spi->lcdHandle, &spiBuf[1], 2, 10) == HAL_OK){
 		return16 = (spiBuf[1] << 4) + (spiBuf[2] >> 4);
 	}else{
