@@ -641,7 +641,7 @@ void ILI9341_printText(ILI9341_SPI *spi, char text[], int16_t x, int16_t y, uint
 }
 
 // Image print (RGB 565, 2 bytes per pixel)
-void ILI9341_printImage(ILI9341_SPI *spi, uint16_t x, uint16_t y, uint16_t w, uint16_t h, uint8_t *data, uint32_t size) {
+void ILI9341_printImage(ILI9341_SPI *spi, uint16_t x, uint16_t y, uint16_t w, uint16_t h, const uint8_t *data, uint32_t size) {
 	uint32_t n = size;
 	ILI9341_SetCursorPosition(spi, x, y, w + x - 1, h + y - 1);
 	for (uint32_t i = 0; i < n; i++) {
@@ -795,4 +795,5 @@ void ILI9341_Init(ILI9341_SPI *spi, SPI_HandleTypeDef *lcdHandle, GPIO_TypeDef *
 	spi->CS_PIN_TOUCH = CS_PIN_TOUCH;
 	// Initial parameters
 	spi->CMD_Default = 0x84;
+
 }
