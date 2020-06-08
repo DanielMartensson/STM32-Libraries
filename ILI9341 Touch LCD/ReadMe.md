@@ -5,9 +5,10 @@ This is a simple LCD with touch feature. The communication protocol is SPI. The 
 This library contains
 - Windows 3.11 Question dialog
 - Icons
+- Start up screen
 - Plot with 2 graphs
 - Number pad
-- Frames
+- Frames etc.
 
 I recommend this LCD due to its price.
 
