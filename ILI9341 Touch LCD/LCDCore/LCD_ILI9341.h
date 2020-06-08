@@ -171,7 +171,7 @@ void ILI9341_drawTriangle(ILI9341_SPI* spi, int16_t x0, int16_t y0, int16_t x1, 
 void ILI9341_fillTriangle(ILI9341_SPI* spi, int16_t x0, int16_t y0, int16_t x1, int16_t y1, int16_t x2, int16_t y2, uint16_t color);
 void ILI9341_drawChar(ILI9341_SPI* spi, int16_t x, int16_t y, unsigned char c, uint16_t color, uint16_t bg, uint8_t size);
 void ILI9341_printText(ILI9341_SPI* spi, char text[], int16_t x, int16_t y, uint16_t color, uint16_t bg, uint8_t size);
-void ILI9341_printImage(ILI9341_SPI* spi, uint16_t x, uint16_t y, uint16_t w, uint16_t h, uint8_t *data, uint32_t size);
+void ILI9341_printImage(ILI9341_SPI* spi, uint16_t x, uint16_t y, uint16_t w, uint16_t h, const uint8_t *data, uint32_t size);
 void ILI9341_setRotation(ILI9341_SPI* spi, uint8_t rotate);
 uint8_t ILI9341_getRotation(ILI9341_SPI* spi);
 
