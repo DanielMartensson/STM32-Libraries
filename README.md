@@ -5,11 +5,8 @@ Collection of rewritten Arduino C++ libraries to STM32 C libraies, and some made
 I hope that you like this library and want to share it with others. Please star this library 
 and fork it. This is my schedule.
 
-* TMC2209 Stepper motor driver 
-* AT-09 Bluetooth 4.0 transmitter and receiver
 * MCP2515 CAN-bus transmitter and receiver
 * ArduCam OV5642 camera module 
-* ESP8266 ESP-01 WiFi HTTP server
 
 ## Liquid Crystal LCD Display with I2C Expander IC
 Rewritten Arduino C++ library from ![johnrickman](https://github.com/johnrickman/LiquidCrystal_I2C) to STM32 C library. Added some more features as well. Works for both 16x2 LCD and 20x4 LCD etc.
@@ -92,3 +89,8 @@ This is a load cell amplifier with 24-bit resolution. I have rewrite Arduino C++
 This library works great with STM32. 
 
 ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/HX711%20Load%20Cell%20Amplifier/S%C3%A9lection_018.png)
+
+# Writing and reading to the memory on the fly
+If your CPU missing EEPROM. Don't worry, you can still write and read to the memory. This folder `FlashMemory` gives you a library where you can save floats, uint8_t, uint16_t, uint32_t values and read them later, during the CPU is running.
+
+ ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/FlashMemory/memory.png)
