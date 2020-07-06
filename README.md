@@ -91,6 +91,6 @@ This library works great with STM32.
 ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/HX711%20Load%20Cell%20Amplifier/S%C3%A9lection_018.png)
 
 # Writing and reading to the memory on the fly
-If your CPU missing EEPROM. Don't worry, you can still write and read to the memory. This folder `FlashMemory` gives you a library where you can save floats, uint8_t, uint16_t, uint32_t values and read them later, during the CPU is running.
+If your CPU missing EEPROM. Don't worry, you can still write and read to the memory. This folder `FlashMemory` gives you a library where you can save `float, uint8_t, uint16_t, uint32_t` values and read them later, during the CPU is running.
 
  ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/FlashMemory/memory.png)
