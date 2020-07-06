@@ -142,7 +142,7 @@ uint8_t show_num_pad_frame(ILI9341_SPI* spi, bool decimalbutton_show, bool minus
 		if (isPressed == true) {
 			if (X >= 23 && X <= 63 && Y >= 70 && Y <= 110) {
 				// 0
-				if (k > 0 && k < 16) {
+				if (k >= 0 && k < 16) {
 					text[k] = '0';
 					k++;
 				}
