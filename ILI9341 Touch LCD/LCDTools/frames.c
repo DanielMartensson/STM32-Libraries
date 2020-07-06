@@ -8,7 +8,7 @@
 #include "LCDTools.h"
 
 // Create the main frame
-void show_main_frame(ILI9341_SPI* spi, bool closedloop_on, bool only_change_loop_icon, bool stable){
+void show_main_frame(ILI9341_SPI* spi, bool closedloop_on, bool only_change_loop_icon){
 	// Set rotation
 	ILI9341_setRotation(spi, 2);
 
@@ -41,12 +41,11 @@ void show_main_frame(ILI9341_SPI* spi, bool closedloop_on, bool only_change_loop
 
 	}
 
-	if(closedloop_on == true && stable == true)
+	// Change the icon if we are in control mode, or open loop mode
+	if(closedloop_on == true)
 		ILI9341_printImage(spi, 8, 146, 40, 40, closedloop_icon, 40*80*sizeof(uint8_t));
-	else if(closedloop_on == false && stable == true)
-		ILI9341_printImage(spi, 8, 146, 40, 40, openloop_icon, 40*80*sizeof(uint8_t));
 	else
-		ILI9341_printImage(spi, 8, 146, 40, 40, unstable_icon, 40*80*sizeof(uint8_t));
+		ILI9341_printImage(spi, 8, 146, 40, 40, openloop_icon, 40*80*sizeof(uint8_t));
 
 }
 
