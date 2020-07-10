@@ -8,11 +8,11 @@
 #include "LCDTools.h"
 
 // Create the main frame
-void show_main_frame(ILI9341_SPI* spi, bool closedloop_on, bool only_change_loop_icon){
+void show_main_frame(ILI9341_SPI* spi, bool closedloop_on, bool update_main_frame, bool identification_on){
 	// Set rotation
 	ILI9341_setRotation(spi, 2);
 
-	if(only_change_loop_icon == false){
+	if(update_main_frame == true){
 		// Set background
 		ILI9341_Fill(spi, COLOR_NAVY);
 
@@ -36,9 +36,7 @@ void show_main_frame(ILI9341_SPI* spi, bool closedloop_on, bool only_change_loop
 		// Apply them
 		ILI9341_printImage(spi, 8, 8, 40, 40, setpoint_icon, 40*80*sizeof(uint8_t));
 		ILI9341_printImage(spi, 8, 55, 40, 40, horizon_icon, 40*80*sizeof(uint8_t));
-		ILI9341_printImage(spi, 8, 100, 40, 40, forgetting_icon, 40*80*sizeof(uint8_t));
 		ILI9341_printImage(spi, 8, 193, 40, 40, save_icon, 40*80*sizeof(uint8_t));
-
 	}
 
 	// Change the icon if we are in control mode, or open loop mode
@@ -46,6 +44,12 @@ void show_main_frame(ILI9341_SPI* spi, bool closedloop_on, bool only_change_loop
 		ILI9341_printImage(spi, 8, 146, 40, 40, closedloop_icon, 40*80*sizeof(uint8_t));
 	else
 		ILI9341_printImage(spi, 8, 146, 40, 40, openloop_icon, 40*80*sizeof(uint8_t));
+
+	// Change the icon if we are in identification mode, no identification mode
+	if(identification_on == true)
+		ILI9341_printImage(spi,  8, 100, 40, 40, identification_on_icon, 40*80*sizeof(uint8_t));
+	else
+		ILI9341_printImage(spi,  8, 100, 40, 40, identification_off_icon, 40*80*sizeof(uint8_t));
 
 }
 
