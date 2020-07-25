@@ -5,7 +5,7 @@ Collection of rewritten Arduino C++ libraries to STM32 C libraies, and some made
 I hope that you like this library and want to share it with others. Please star this library 
 and fork it. This is my schedule.
 
-* MCP2515 CAN-bus transmitter and receiver
+* Sonceboz stepper motor with MCP2515 CAN-bus transmitter and receiver
 * ArduCam OV5642 camera module 
 
 ## Liquid Crystal LCD Display with I2C Expander IC
