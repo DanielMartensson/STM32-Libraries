@@ -20,7 +20,7 @@ int main(){
 	Encoder_init(&encoder, &htim5, 30, 1000);
   
   
-  while(){
+  while(1){
     Encoder_count(&encoder);
     float speed = Encoder_getSpeed(&encoder);
     float difference = Encoder_getDifference(&encoder);
