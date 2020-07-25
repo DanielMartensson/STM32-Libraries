@@ -1,6 +1,10 @@
 # Encoder
 With this, you can measure velocity, direction and also count the position for an encoder.
 
+Settings:
+
+![a](https://github.com/DanielMartensson/STM32-Libraries/blob/master/Encoder/S%C3%A9lection_064.png)
+
 Program example:
 
 ```
