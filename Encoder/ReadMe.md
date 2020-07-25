@@ -3,7 +3,7 @@ With this, you can measure velocity, direction and also count the position for a
 
 Settings:
 
-Don't forget to use pull-down resistors at GPIO-Settings->GPIO Pull-up/Pull-down
+Don't forget to use pull-down resistors at `GPIO Settings->GPIO Pull-up/Pull-down`
 
 ![a](https://github.com/DanielMartensson/STM32-Libraries/blob/master/Encoder/S%C3%A9lection_064.png)
 
