@@ -19,7 +19,7 @@ void Encoder_init(Encoder *encoder, TIM_HandleTypeDef *htim, uint16_t one_rotati
 	encoder->check_every_ms = check_every_ms;
 }
 
-void count_encoder(Encoder *encoder) {
+void Encoder_count(Encoder *encoder) {
 	if (HAL_GetTick() - encoder->tick > encoder->check_every_ms) {
 		/* Control TIM for every check_every_ms */
 		encoder->cnt2 = encoder->htim->Instance->CNT;
@@ -64,6 +64,12 @@ void count_encoder(Encoder *encoder) {
 	}
 }
 
+// Get the speed and also the direction
 float Encoder_getSpeed(Encoder *encoder){
 	return encoder->dir == 1 ? (float) encoder->speed : -((float) encoder->speed);
+}
+
+// Get the difference for every check
+uint16_t Encoder_getDifference(Encoder *encoder){
+	return encoder->diff;
 }
