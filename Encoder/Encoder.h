@@ -18,7 +18,8 @@ typedef struct{
 }Encoder;
 
 void Encoder_init(Encoder *encoder, TIM_HandleTypeDef *htim, uint16_t one_rotation_pulses, uint32_t check_every_ms);
-void count_encoder(Encoder *encoder);
+void Encoder_count(Encoder *encoder);
 float Encoder_getSpeed(Encoder *encoder);
+uint16_t Encoder_getDifference(Encoder *encoder);
 
 #endif /* SRC_ENCODER_ENCODER_H_ */
