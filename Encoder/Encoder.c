@@ -63,9 +63,9 @@ void Encoder_count(Encoder *encoder) {
 	}
 }
 
-// Get the speed and also the direction - Unit: RPM
+// Get the speed and also the direction - Unit: RPM*one_rotation_pulses
 float Encoder_getSpeed(Encoder *encoder){
-	return encoder->dir == 1 ? (float) (encoder->speed / encoder->one_rotation_pulses) : -((float) (encoder->speed / encoder->one_rotation_pulses));
+	return encoder->dir == 1 ? (float) encoder->speed : -((float) encoder->speed);
 }
 
 // Get the difference for every check
