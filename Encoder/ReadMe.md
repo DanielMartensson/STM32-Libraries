@@ -21,16 +21,15 @@ Encoder encoder;
 int main(){
   /* Regular STM32 stuffs */
 
-  // Init encoder with 1000 milli seconds as intervall and also encoder have 30 pulses for each rotation
-	HAL_TIM_Encoder_Start(&htim5, TIM_CHANNEL_ALL);
-	Encoder_init(&encoder, &htim5, 30, 1000);
-  
+  // Init encoder that have 30 pulses for each rotation
+  HAL_TIM_Encoder_Start(&htim5, TIM_CHANNEL_ALL);
+  Encoder_init(&encoder, &htim5, 30);
   
   while(1){
     Encoder_count(&encoder);
-    float speed = Encoder_getSpeed(&encoder);
+    float speed = Encoder_getSpeed(&encoder); // Unit: RPM
     float difference = Encoder_getDifference(&encoder);
-    HAL_Delay(1000);
+    HAL_Delay(1);
   }
   
 }
