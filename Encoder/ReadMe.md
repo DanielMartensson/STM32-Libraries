@@ -27,7 +27,7 @@ int main(){
   
   while(1){
     Encoder_count(&encoder);
-    float speed = Encoder_getSpeed(&encoder); // Unit: RPM
+    float speed = Encoder_getSpeed(&encoder)/30.0; // Unit: RPM
     float difference = Encoder_getDifference(&encoder);
     HAL_Delay(1);
   }
