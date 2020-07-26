@@ -13,11 +13,11 @@
 typedef struct{
 	uint8_t dir;
 	uint16_t cnt1, cnt2, diff, speed, one_rotation_pulses;
-	uint32_t tick, check_every_ms;
+	uint32_t tick;
 	TIM_HandleTypeDef* htim;
 }Encoder;
 
-void Encoder_init(Encoder *encoder, TIM_HandleTypeDef *htim, uint16_t one_rotation_pulses, uint32_t check_every_ms);
+void Encoder_init(Encoder *encoder, TIM_HandleTypeDef *htim, uint16_t one_rotation_pulses);
 void Encoder_count(Encoder *encoder);
 float Encoder_getSpeed(Encoder *encoder);
 uint16_t Encoder_getDifference(Encoder *encoder);

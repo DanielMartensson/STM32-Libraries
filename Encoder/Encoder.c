@@ -13,14 +13,13 @@
  * Then select Encoder Mode TI1 and TI2.
  * Leave the rest as default
  */
-void Encoder_init(Encoder *encoder, TIM_HandleTypeDef *htim, uint16_t one_rotation_pulses, uint32_t check_every_ms) {
+void Encoder_init(Encoder *encoder, TIM_HandleTypeDef *htim, uint16_t one_rotation_pulses) {
 	encoder->htim = htim;
 	encoder->one_rotation_pulses = one_rotation_pulses;
-	encoder->check_every_ms = check_every_ms;
 }
 
 void Encoder_count(Encoder *encoder) {
-	if (HAL_GetTick() - encoder->tick > encoder->check_every_ms) {
+	if (HAL_GetTick() - encoder->tick > 1000L) {
 		/* Control TIM for every check_every_ms */
 		encoder->cnt2 = encoder->htim->Instance->CNT;
 
@@ -64,9 +63,9 @@ void Encoder_count(Encoder *encoder) {
 	}
 }
 
-// Get the speed and also the direction
+// Get the speed and also the direction - Unit: RPM
 float Encoder_getSpeed(Encoder *encoder){
-	return encoder->dir == 1 ? (float) encoder->speed : -((float) encoder->speed);
+	return encoder->dir == 1 ? (float) (encoder->speed / encoder->one_rotation_pulses) : -((float) (encoder->speed / encoder->one_rotation_pulses));
 }
 
 // Get the difference for every check
