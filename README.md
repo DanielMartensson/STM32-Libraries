@@ -1,13 +1,6 @@
 # STM32-Libraries
 Collection of rewritten Arduino C++ libraries to STM32 C libraies, and some made by my self.
 
-## TODO
-I hope that you like this library and want to share it with others. Please star this library 
-and fork it. This is my schedule.
-
-* Sonceboz stepper motor with MCP2515 CAN-bus transmitter and receiver
-* ArduCam OV5642 camera module 
-
 ## Liquid Crystal LCD Display with I2C Expander IC
 Rewritten Arduino C++ library from ![johnrickman](https://github.com/johnrickman/LiquidCrystal_I2C) to STM32 C library. Added some more features as well. Works for both 16x2 LCD and 20x4 LCD etc.
 
@@ -99,3 +92,9 @@ If your CPU missing EEPROM. Don't worry, you can still write and read to the mem
  With this, you can measure velocity, direction and also count the position for an encoder.
  
  ![a](https://github.com/DanielMartensson/STM32-Libraries/blob/master/Encoder/Sélection_063.png)
+ 
+ # Sonceboz CAN bus controller
+ 
+ Have a look at my repository CControl here at "Model reference adaptive control" topic
+ https://github.com/DanielMartensson/CControl
+ 
