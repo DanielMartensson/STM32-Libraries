@@ -86,7 +86,7 @@ This library works great with STM32.
 # Writing and reading to the memory on the fly
 If your CPU missing EEPROM. Don't worry, you can still write and read to the memory. This folder `FlashMemory` gives you a library where you can save `float, uint8_t, uint16_t, uint32_t` values and read them later, during the CPU is running.
 
- ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/FlashMemory/memory.png)
+ ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/FlashMemory_F4/memory.png)
  
  # Encoder
  With this, you can measure velocity, direction and also count the position for an encoder.
