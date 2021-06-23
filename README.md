@@ -5,6 +5,7 @@ Collection of rewritten Arduino C++ libraries to STM32 C libraies, and some made
 Rewritten Arduino C++ library from ![johnrickman](https://github.com/johnrickman/LiquidCrystal_I2C) to STM32 C library. Added some more features as well. Works for both 16x2 LCD and 20x4 LCD etc.
 
 ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/LiquidCrystal%20I2C/Selecci%C3%B3n_017.png)
+
 ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/LiquidCrystal%20I2C/Selecci%C3%B3n_018.png)
 
 ## MAX31865 RTD Temperature sensor reader
@@ -100,5 +101,6 @@ If your CPU missing EEPROM. Don't worry, you can still write and read to the mem
  
 # VL6180X & VL6180 distance + ALS sensor
 This library is for ST's own VL6180X and VL6180 distance + ALS sensor. Very good sensor for the low price. I recommend it.
+This code is rewritten Arduino C++ code from [Adafruit](https://github.com/adafruit/Adafruit_VL6180X/) to STM32 C code.
 
-![a](https://github.com/DanielMartensson/STM32-Libraries/blob/master/VL6180X/VL6180X.png)
+![a](https://github.com/DanielMartensson/STM32-Libraries/blob/master/VL6180X/VL6180X.PNG)
