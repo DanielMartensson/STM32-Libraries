@@ -62,11 +62,11 @@ Program example:
   }
 ```
 
-Pictures of measurement at steady state e.g measuring at a fixed distance over time.
+Pictures of distance measurement(millimeter) at steady state e.g measuring at a fixed distance over time. 
 
-[a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/VL6180X/Distribution/Distribution.png)
+![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/VL6180X/Distribution/Distribution.png)
 
-[a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/VL6180X/Distribution/Mean.png)
+![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/VL6180X/Distribution/Mean.png)
 
-[a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/VL6180X/Distribution/Std.png)
+![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/VL6180X/Distribution/Std.png)
 
