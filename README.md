@@ -98,3 +98,7 @@ If your CPU missing EEPROM. Don't worry, you can still write and read to the mem
  Have a look at my repository CControl here at "Model reference adaptive control" topic
  https://github.com/DanielMartensson/CControl
  
+# VL6180X & VL6180 distance + ALS sensor
+This library is for ST's own VL6180X and VL6180 distance + ALS sensor. Very good sensor for the low price. I recommend it.
+
+![a](https://github.com/DanielMartensson/STM32-Libraries/blob/master/VL6180X/VL6180X.png)
