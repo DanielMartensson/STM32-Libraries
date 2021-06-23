@@ -64,9 +64,9 @@ Program example:
 
 Pictures of measurement at steady state e.g measuring at a fixed distance over time.
 
-[a](https://github.com/DanielMartensson/STM32-Libraries/blob/master/VL6180X/Distribution/Distribution.png?raw=true)
+[a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/VL6180X/Distribution/Distribution.png)
 
-[a](https://github.com/DanielMartensson/STM32-Libraries/blob/master/VL6180X/Distribution/Mean.png?raw=true)
+[a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/VL6180X/Distribution/Mean.png)
 
-[a](https://github.com/DanielMartensson/STM32-Libraries/blob/master/VL6180X/Distribution/Std.png?raw=true)
+[a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/VL6180X/Distribution/Std.png)
 
