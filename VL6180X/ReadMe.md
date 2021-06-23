@@ -1,7 +1,7 @@
 This is VL6180X distance + ALS sensor. VL6180 works too for this library because it's the same sensor, without the ALS sensor. 
 This code uses the same code from Adafruit, because I just rewrote Arduino C++ code to STM32 C code.
 
-This sensor have a very high accuracy for the price. about 1-2mm accuracy between 10-100mm. 
+This sensor have a very high accuracy for the price. about 1-2mm accuracy between 10-100mm. Have a look at the distribution folder for calculation how good VL6180X is.
 
 Program example:
 ```
@@ -61,3 +61,12 @@ Program example:
 	    HAL_Delay(50);
   }
 ```
+
+Pictures of measurement at steady state e.g measuring at a fixed distance over time.
+
+[a](https://github.com/DanielMartensson/STM32-Libraries/blob/master/VL6180X/Distribution/Distribution.png?raw=true)
+
+[a](https://github.com/DanielMartensson/STM32-Libraries/blob/master/VL6180X/Distribution/Mean.png?raw=true)
+
+[a](https://github.com/DanielMartensson/STM32-Libraries/blob/master/VL6180X/Distribution/Std.png?raw=true)
+
