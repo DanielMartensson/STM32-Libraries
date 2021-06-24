@@ -33,7 +33,7 @@ end
 
 % Distribution
 bar(X/sum(X))
-xlim([10 20]) 
+xlim([(min(fid)-5) (max(fid)+5)]) 
 grid on
 title(sprintf('Distribution where total samples are %i', length(fid)))
 ylabel('Propability')
