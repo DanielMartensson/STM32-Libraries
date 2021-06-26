@@ -121,7 +121,7 @@ function P = ukf_estimate_covariance(xi, x, W, O, L)
 end
 
 function Csz = ukf_estimate_cross_covariance(s, xhat, z, zhat, Wc, L)
-	N = 2 * L + 1;
+  N = 2 * L + 1;
   Csz = zeros(L, L);
   for i = 1:N
     Csz = Csz + Wc(i)*(s(:, i) - xhat)*(z(:, i) - zhat)';
