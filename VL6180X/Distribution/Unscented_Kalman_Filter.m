@@ -41,16 +41,16 @@ function [xhat, P] = ukf(xhat, zk, P, Q, R, a, k, b, L)
   [Wa, Wc] = ukf_create_weights(a, b, k, L);
     
   % PREDICT: Step 0 - Predict the state and state estimation error covariance at the next time step
-	s = ukf_compute_sigma_points(xhat, P, a, k, L);
+  s = ukf_compute_sigma_points(xhat, P, a, k, L);
 
-	% PREDICT: Step 1 - Run our transition function
-	x = ukf_transition(s, L);
+  % PREDICT: Step 1 - Run our transition function
+  x = ukf_transition(s, L);
  
-	% PREDICT: Step 2 - Combine the predicted states to obtain the predicted states
-	xhat = ukf_multiply_weights(x, Wa, L);
+  % PREDICT: Step 2 - Combine the predicted states to obtain the predicted states
+  xhat = ukf_multiply_weights(x, Wa, L);
 
-	% PREDICT: Step 3 - Compute the covariance of the predicted state
-	P = ukf_estimate_covariance(x, xhat, Wc, Q, L);
+  % PREDICT: Step 3 - Compute the covariance of the predicted state
+  P = ukf_estimate_covariance(x, xhat, Wc, Q, L);
   
   % UPDATE: Step 1 - Use the nonlinear measurement function to compute the predicted measurements for each of the sigma points.
   z = s; % Here we assume that the observation function z = h(s, u) = s
@@ -65,7 +65,7 @@ function [xhat, P] = ukf(xhat, zk, P, Q, R, a, k, b, L)
   Csz = ukf_estimate_cross_covariance(s, xhat, z, zhat, Wc, L);
   
   % UPDATE: Step 5 - Find kalman K matrix
-	K = ukf_create_kalman_K(Shat, Csz, L);
+  K = ukf_create_kalman_K(Shat, Csz, L);
   
   % UPDATE: Step 6 - Obtain the estimated state and state estimation error covariance
   [xhat, P] = ukf_state_update(K, Shat, P, xhat, zk, zhat, L);
@@ -89,7 +89,7 @@ end
 
 function [s] = ukf_compute_sigma_points(x, P, a, k, L)
   N = 2 * L + 1;
-	compensate = L + 1;
+  compensate = L + 1;
   s = zeros(L, N);
   A = a*sqrt(k)*chol(P);
   for j = 1:N
