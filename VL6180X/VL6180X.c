@@ -366,7 +366,7 @@ uint16_t read16(uint16_t address) {
 	uint16_t data;
 	uint8_t pData[2] = { address >> 8, address };
 	HAL_I2C_Master_Transmit(VL6180X_i2c, _i2caddr, pData, 2, 10);
-	HAL_I2C_Master_Receive(VL6180X_i2c, _i2caddr, pData, 1, 10);
+	HAL_I2C_Master_Receive(VL6180X_i2c, _i2caddr, pData, 2, 10);
 	data = pData[0];
 	data <<= 8;
 	data |= pData[1];
