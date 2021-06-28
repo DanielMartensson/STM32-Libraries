@@ -73,6 +73,6 @@ Pictures of distance measurement(millimeter) at steady state e.g measuring at a 
 
 ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/VL6180X/Distribution/Std.png)
 
-Here is an example where I'm using a Kalman Filter example. C-code avaiable at CControl repository.
+Here is an example where I'm using a Kalman Filter example. C-code available at CControl repository.
 
 ![a](https://raw.githubusercontent.com/DanielMartensson/STM32-Libraries/master/VL6180X/UKF.png)
