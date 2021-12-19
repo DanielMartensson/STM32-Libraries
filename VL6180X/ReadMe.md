@@ -3,8 +3,8 @@ This code uses the same code from Adafruit, because I just rewrote Arduino C++ c
 
 This sensor have a very high accuracy for the price. about 1-2mm accuracy between 10-100mm. Have a look at the distribution folder for calculation how good VL6180X is.
 
-Notice that to get a higher precision, then add an Unscented Kalman Filter. Have a look at this example.
-https://github.com/DanielMartensson/CControl/blob/master/src/CControl/Documents/Examples/Filtering/ukf.txt
+Notice that to get a higher precision, then add an Unscented Kalman Filter.
+https://github.com/DanielMartensson/CControl
 
 Program example:
 ```
