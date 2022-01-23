@@ -5,9 +5,60 @@ LCD library so it can write out images very fast using only two SPI. One SPI for
 
 This is just examples. Just copy the code and modify it after your own choice. 
 
-Functionality:
+Example:
+
+```c
+/* Create structure, the J1939 structure is from another project called Open SAE J1939 at my Github */
+J1939 j1939 = {0};
+STM32_PLC stm32_plc = {0};
+
+/* Init */
+STM32_PLC_LCD(&hspi1, &hspi2, LCD_CS_GPIO_Port, LCD_CS_Pin, LCD_DC_GPIO_Port, LCD_DC_Pin, LCD_RST_GPIO_Port, LCD_RST_Pin, TS_CS_GPIO_Port, TS_CS_Pin);
+
+/* Introduction startup */
+STM32_PLC_LCD_Show_Intro_Frame();
+
+/* Introduction startup */
+STM32_PLC_LCD_Show_Intro_Frame();
+
+/* Check if we touch at the screen */
+if(STM32_PLC_LCD_Is_Pressed()){
+	/* Blink with all LED lamps before calibration start */
+	for(uint8_t i = 0; i < 3; i++){
+	 STM32_PLC_LCD_Set_Control_Program(0x1F);
+	 HAL_Delay(1000);
+	 STM32_PLC_LCD_Set_Control_Program(0x0);
+	 HAL_Delay(1000);
+	}
+	STM32_PLC_LCD_Set_Control_Program(stm32_plc.program_number);
+	STM32_PLC_LCD_Calibrate_Touch();
+	STM32_PLC_LCD_Get_Touch_Calibration_Parameters(&stm32_plc.Scale_X, &stm32_plc.Scale_Y, &stm32_plc.Bias_X, &stm32_plc.Bias_Y);
+	if(!Save_Struct((uint8_t*)&stm32_plc, sizeof(STM32_PLC), STM32_PLC_TEXT_FILE_NAME))
+			STM32_PLC_LCD_Show_Information_OK_Dialog("Could not mount SD card");
+}
+
+/* Frame start */
+uint8_t frame_id = 0;
+STM32_PLC_LCD_Show_Main_Frame(&frame_id, false);
+
+while (1)
+{
+  /* USER CODE END WHILE */
+
+  /* USER CODE BEGIN 3 */
+
+ /* Listen for frame changes */
+ STM32_PLC_LCD_Call_Main_Logic(&frame_id, &j1939, &stm32_plc);
+ /* Perform control program */
+ STM32_PLC_LCD_Execute_Control_Program(&j1939);
+
+}
 
 ```
+
+Functionality:
+
+```c
 void STM32_PLC_Start_LCD(SPI_HandleTypeDef *lcdSpi, SPI_HandleTypeDef *touchSpi, GPIO_TypeDef *LCD_CS_PORT, uint16_t LCD_CS_PIN, GPIO_TypeDef *LCD_DC_PORT, uint16_t LCD_DC_PIN, GPIO_TypeDef *LCD_RESET_PORT, uint16_t LCD_RESET_PIN, GPIO_TypeDef *TOUCH_CS_PORT, uint16_t TOUCH_CS_PIN);
 void STM32_PLC_LCD_Calibrate_Touch();
 void STM32_PLC_LCD_Get_Touch_Calibration_Parameters(float *Scale_X, float *Scale_Y, float *Bias_X, float *Bias_Y);
