@@ -2,7 +2,7 @@
 
 static I2C_HandleTypeDef *_hi2c;
 static uint8_t _address;
-uint8_t Timeout = 10;
+#define Timeout 10
 
 #define GERNAL_CALL_COMMAND 0x0
 #define GENERAL_CALL_RESET 0x6
